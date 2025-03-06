@@ -1,11 +1,12 @@
-import { Text, View } from 'react-native';
+import { ReactNode } from 'react';
+import { Button, Text, View } from 'react-native';
 
 import { EditScreenInfo } from './EditScreenInfo';
 
 type ScreenContentProps = {
   title: string;
   path: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 export const ScreenContent = ({ title, path, children }: ScreenContentProps) => {
@@ -15,6 +16,11 @@ export const ScreenContent = ({ title, path, children }: ScreenContentProps) => 
       <View className={styles.separator} />
       <EditScreenInfo path={path} />
       {children}
+      <Button
+        title="Bonjour"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
     </View>
   );
 };

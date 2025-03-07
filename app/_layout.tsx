@@ -28,7 +28,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <ThemeProvider>
       <StatusBar style="auto" />
       {children}
-      <Stack></Stack>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
     </ThemeProvider>
   );
 }

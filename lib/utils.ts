@@ -18,3 +18,15 @@ export function iconWithClassName(icon: LucideIcon) {
     },
   });
 }
+
+export function componentWithClassName(component: any) {
+  cssInterop(component, {
+    className: {
+      target: 'style',
+      nativeStyleToProp: {
+        color: true,
+        opacity: true,
+      },
+    },
+  });
+}

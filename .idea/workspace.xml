@@ -18,23 +18,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(theme): implement dynamic theming with toggle support&#10;&#10;Add a `ThemeProvider` for managing light and dark themes using `nativewind`. Introduce reusable `Button` and `Text` components, alongside a `ThemeToggle` for switching themes. Updated TailwindCSS configuration and project dependencies to support theming.">
-      <change afterPath="$PROJECT_DIR$/components/ui/theme-toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="refactor(ui): restructure components and tweak theming&#10;&#10;Refactored UI components, reorganizing button and text logic. Updated theme toggle and global styles to streamline theming consistency. Added support for Roboto and Rosarivo fonts with Expo configuration updates.">
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/providers/ThemeProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/providers/theme-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/Button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/Text.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/ThemeToggle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/icons/moon-star.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/moon-star.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/icons/sun.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/sun.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/text.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/theme-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/theme-toggle.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/utils/useThemeToggle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/utils/useTheme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,30 +65,35 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/assets/fonts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.android.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/app/(tabs)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.android.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(tabs)" />
+      <recent name="$PROJECT_DIR$/components/icons" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(tabs)" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/components/ui" />
     </key>
@@ -132,7 +134,7 @@
       <workItem from="1741266566496" duration="1805000" />
       <workItem from="1741268398996" duration="8234000" />
       <workItem from="1741277851855" duration="4979000" />
-      <workItem from="1741338447154" duration="1057000" />
+      <workItem from="1741338447154" duration="11114000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -158,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741271488989</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor(ui): restructure components and tweak theming&#10;&#10;Refactored UI components, reorganizing button and text logic. Updated theme toggle and global styles to streamline theming consistency. Added support for Roboto and Rosarivo fonts with Expo configuration updates.">
+      <option name="closed" value="true" />
+      <created>1741339611203</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741339611203</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +190,8 @@
     <MESSAGE value="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files." />
     <MESSAGE value="feat(router): migrate to Expo Router and update dependencies&#10;&#10;Replaced custom AppLayout with Expo Router's stack-based layout. Updated dependencies to include new packages required for the routing system. Adjusted scripts and project structure to align with the Expo Router setup." />
     <MESSAGE value="feat(theme): implement dynamic theming with toggle support&#10;&#10;Add a `ThemeProvider` for managing light and dark themes using `nativewind`. Introduce reusable `Button` and `Text` components, alongside a `ThemeToggle` for switching themes. Updated TailwindCSS configuration and project dependencies to support theming." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(theme): implement dynamic theming with toggle support&#10;&#10;Add a `ThemeProvider` for managing light and dark themes using `nativewind`. Introduce reusable `Button` and `Text` components, alongside a `ThemeToggle` for switching themes. Updated TailwindCSS configuration and project dependencies to support theming." />
+    <MESSAGE value="refactor(ui): restructure components and tweak theming&#10;&#10;Refactored UI components, reorganizing button and text logic. Updated theme toggle and global styles to streamline theming consistency. Added support for Roboto and Rosarivo fonts with Expo configuration updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): restructure components and tweak theming&#10;&#10;Refactored UI components, reorganizing button and text logic. Updated theme toggle and global styles to streamline theming consistency. Added support for Roboto and Rosarivo fonts with Expo configuration updates." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -9,11 +9,11 @@ const TextClassContext = React.createContext<string | undefined>(undefined);
 
 type TextProps = SlottableTextProps & {
   font?: 'roboto' | 'rosarivo';
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 };
 
 const Text = React.forwardRef<TextRef, TextProps>(
-  ({ className, font = 'rosarivo', size = 'md', asChild = false, ...props }, ref) => {
+  ({ className, font = 'rosarivo', size = 'sm', asChild = false, ...props }, ref) => {
     const textClass = React.useContext(TextClassContext);
     const Component = asChild ? Slot.Text : RNText;
     return (
@@ -21,16 +21,18 @@ const Text = React.forwardRef<TextRef, TextProps>(
         className={cn(
           'text-base text-foreground web:select-text',
           textClass,
-          className,
           {
             'font-[roboto]': font === 'roboto',
             'font-[rosarivo]': font === 'rosarivo',
           },
           {
-            'text-sm': size === 'sm',
-            'text-md': size === 'md',
-            'text-lg': size === 'lg',
-          }
+            'text-sm': size === 'xs',
+            'text-base': size === 'sm',
+            'text-lg': size === 'md',
+            'text-xl': size === 'lg',
+            'text-2xl': size === 'xl',
+          },
+          className
         )}
         ref={ref}
         {...props}

@@ -1,14 +1,11 @@
-import { ScreenContent } from 'components/ScreenContent';
-
-import { Text } from '@/components/ui/Text';
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { View } from 'react-native';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 export default function App() {
   return (
-    <>
+    <View>
       {/*<ScreenContent title="Home" path="App.tsx" />*/}
       <ThemeToggle />
-      <Text className="text-primary-foreground">Label</Text>
-    </>
+    </View>
   );
 }

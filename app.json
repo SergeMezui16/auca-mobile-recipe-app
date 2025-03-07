@@ -4,6 +4,7 @@
     "slug": "recipe-mobile-app",
     "scheme": "recipe-mobile-app",
     "version": "1.0.0",
+    "newArchEnabled": true,
     "web": {
       "favicon": "./assets/favicon.png"
     },
@@ -11,7 +12,16 @@
       "tsconfigPaths": true
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/rosarivo/Rosarivo-Regular.ttf",
+            "./assets/fonts/roboto/Roboto.ttf"
+          ]
+        }
+      ]
     ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",

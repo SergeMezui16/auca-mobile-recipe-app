@@ -18,20 +18,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="refactor(ui): restructure components and tweak theming&#10;&#10;Refactored UI components, reorganizing button and text logic. Updated theme toggle and global styles to streamline theming consistency. Added support for Roboto and Rosarivo fonts with Expo configuration updates.">
-      <change afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:tabs): implement new tab navigation and UI updates&#10;&#10;Introduced a new tab-based navigation system with refactored layout, screens, and components. Updated theme colors, icons, and added a recipe list with a dynamic UI. Integrated new dependencies, including `expo-image` and `flash-list`, for enhanced UI performance.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons/moon-star.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/moon-star.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons/sun.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/sun.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/text.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/theme-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/theme-toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/search.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +83,7 @@
       <recent name="$PROJECT_DIR$/assets/fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(tabs)/recipes" />
       <recent name="$PROJECT_DIR$/app/(tabs)" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/components/ui" />
@@ -134,7 +125,7 @@
       <workItem from="1741266566496" duration="1805000" />
       <workItem from="1741268398996" duration="8234000" />
       <workItem from="1741277851855" duration="4979000" />
-      <workItem from="1741338447154" duration="11114000" />
+      <workItem from="1741338447154" duration="14325000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -168,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741339611203</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat(app:tabs): implement new tab navigation and UI updates&#10;&#10;Introduced a new tab-based navigation system with refactored layout, screens, and components. Updated theme colors, icons, and added a recipe list with a dynamic UI. Integrated new dependencies, including `expo-image` and `flash-list`, for enhanced UI performance.">
+      <option name="closed" value="true" />
+      <created>1741349948031</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741349948031</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +190,8 @@
     <MESSAGE value="feat(router): migrate to Expo Router and update dependencies&#10;&#10;Replaced custom AppLayout with Expo Router's stack-based layout. Updated dependencies to include new packages required for the routing system. Adjusted scripts and project structure to align with the Expo Router setup." />
     <MESSAGE value="feat(theme): implement dynamic theming with toggle support&#10;&#10;Add a `ThemeProvider` for managing light and dark themes using `nativewind`. Introduce reusable `Button` and `Text` components, alongside a `ThemeToggle` for switching themes. Updated TailwindCSS configuration and project dependencies to support theming." />
     <MESSAGE value="refactor(ui): restructure components and tweak theming&#10;&#10;Refactored UI components, reorganizing button and text logic. Updated theme toggle and global styles to streamline theming consistency. Added support for Roboto and Rosarivo fonts with Expo configuration updates." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): restructure components and tweak theming&#10;&#10;Refactored UI components, reorganizing button and text logic. Updated theme toggle and global styles to streamline theming consistency. Added support for Roboto and Rosarivo fonts with Expo configuration updates." />
+    <MESSAGE value="feat(app:tabs): implement new tab navigation and UI updates&#10;&#10;Introduced a new tab-based navigation system with refactored layout, screens, and components. Updated theme colors, icons, and added a recipe list with a dynamic UI. Integrated new dependencies, including `expo-image` and `flash-list`, for enhanced UI performance." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(app:tabs): implement new tab navigation and UI updates&#10;&#10;Introduced a new tab-based navigation system with refactored layout, screens, and components. Updated theme colors, icons, and added a recipe list with a dynamic UI. Integrated new dependencies, including `expo-image` and `flash-list`, for enhanced UI performance." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

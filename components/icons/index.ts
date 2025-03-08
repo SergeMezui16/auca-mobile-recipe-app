@@ -11,3 +11,7 @@ export * from './search';
 export * from './home';
 export * from './author';
 export * from './comment';
+export * from './calculator';
+export * from './menu';
+export * from './network';
+export * from './battery';

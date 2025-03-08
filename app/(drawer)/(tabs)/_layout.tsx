@@ -3,8 +3,7 @@ import { LucideIcon } from 'lucide-react-native';
 import React from 'react';
 
 import { HeaderLogo, HeaderTitle, HeaderToggleTheme } from '@/components/blocks';
-import { HomeIcon } from '@/components/icons';
-import { CalculatorIcon } from '@/components/icons/calculator';
+import { BatteryIcon, CalculatorIcon, HomeIcon, NetworkIcon } from '@/components/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 
@@ -30,6 +29,22 @@ export default function TabLayout() {
         options={{
           title: 'Calculator',
           tabBarIcon: (props) => <TabBarIcon {...props} icon={CalculatorIcon} />,
+          tabBarLabel: TabBarLabel,
+        }}
+      />
+      <Tabs.Screen
+        name="network"
+        options={{
+          title: 'Network',
+          tabBarIcon: (props) => <TabBarIcon {...props} icon={NetworkIcon} />,
+          tabBarLabel: TabBarLabel,
+        }}
+      />
+      <Tabs.Screen
+        name="battery"
+        options={{
+          title: 'Battery',
+          tabBarIcon: (props) => <TabBarIcon {...props} icon={BatteryIcon} />,
           tabBarLabel: TabBarLabel,
         }}
       />

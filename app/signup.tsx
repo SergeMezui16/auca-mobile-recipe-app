@@ -2,7 +2,7 @@ import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { View } from 'react-native';
 
-import { LogoHead, SafeView } from '@/components/blocks';
+import { SafeView } from '@/components/blocks';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
@@ -15,7 +15,6 @@ export default function Signup() {
   return (
     <>
       <SafeView className="flex-1 items-center justify-center gap-10">
-        <LogoHead />
         <View className="w-full gap-6 rounded-lg border border-secondary bg-secondary p-4">
           <View>
             <Text size="xl">Mbolani.</Text>

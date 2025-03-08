@@ -13,15 +13,7 @@
     },
     "plugins": [
       "expo-router",
-      [
-        "expo-font",
-        {
-          "fonts": [
-            "./assets/fonts/rosarivo/Rosarivo-Regular.ttf",
-            "./assets/fonts/roboto/Roboto.ttf"
-          ]
-        }
-      ]
+      "expo-font"
     ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",

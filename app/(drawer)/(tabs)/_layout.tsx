@@ -3,7 +3,8 @@ import { LucideIcon } from 'lucide-react-native';
 import React from 'react';
 
 import { HeaderLogo, HeaderTitle, HeaderToggleTheme } from '@/components/blocks';
-import { HomeIcon, PlusIcon, ProfileIcon, SearchIcon } from '@/components/icons';
+import { HomeIcon } from '@/components/icons';
+import { CalculatorIcon } from '@/components/icons/calculator';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 
@@ -25,30 +26,13 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="search"
+        name="calculator"
         options={{
-          title: 'Search',
-          tabBarIcon: (props) => <TabBarIcon {...props} icon={SearchIcon} />,
+          title: 'Calculator',
+          tabBarIcon: (props) => <TabBarIcon {...props} icon={CalculatorIcon} />,
           tabBarLabel: TabBarLabel,
         }}
       />
-      <Tabs.Screen
-        name="new"
-        options={{
-          title: 'New',
-          tabBarIcon: (props) => <TabBarIcon {...props} icon={PlusIcon} />,
-          tabBarLabel: TabBarLabel,
-        }}
-      />
-      <Tabs.Screen
-        name="settings"
-        options={{
-          title: 'Settings',
-          tabBarIcon: (props) => <TabBarIcon {...props} icon={ProfileIcon} />,
-          tabBarLabel: TabBarLabel,
-        }}
-      />
-      <Tabs.Screen name="recipes" options={{ href: null }} />
     </Tabs>
   );
 }

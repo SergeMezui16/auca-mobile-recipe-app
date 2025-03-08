@@ -34,7 +34,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="signup" options={{ headerShown: false }} />
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
         </Stack>
         <PortalHost />
       </ThemeProvider>

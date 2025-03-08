@@ -1,20 +1,30 @@
+import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { SunIcon } from 'lucide-react-native';
 import React, { useEffect } from 'react';
 
-import { CookingPotIcon, MoonStarIcon } from '@/components/icons';
+import { MoonStarIcon } from '@/components/icons';
+import { MenuIcon } from '@/components/icons/menu';
 import { Text } from '@/components/ui/text';
 import { useTheme } from '@/hooks/utils';
 
 export const HeaderTitle = () => {
   return (
     <Text size="xl" className="pt-3">
-      Recipe Hub Share
+      My Mobile App
     </Text>
   );
 };
 
 export const HeaderLogo = () => {
-  return <CookingPotIcon className="ml-2 mr-2 stroke-1 text-primary" size={24} />;
+  const { dispatch } = useNavigation();
+  // const {} = Drawer;
+  return (
+    <MenuIcon
+      onPress={() => dispatch(DrawerActions.toggleDrawer())}
+      className="ml-2 mr-2 text-foreground"
+      size={24}
+    />
+  );
 };
 
 export const HeaderToggleTheme = () => {

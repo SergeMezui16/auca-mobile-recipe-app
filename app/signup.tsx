@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Text } from '@/components/ui/text';
 
-export default function Index() {
+export default function Signup() {
   const router = useRouter();
   const [checked, setChecked] = useState(false);
   return (
@@ -18,12 +18,18 @@ export default function Index() {
         <LogoHead />
         <View className="w-full gap-6 rounded-lg border border-secondary bg-secondary p-4">
           <View>
-            <Text size="xl">Welcome back.</Text>
+            <Text size="xl">Mbolani.</Text>
             <Text className="text-muted-foreground">
-              Provide your credentials to login and start cooking your favorite food.
+              Provide your credentials to register and start cooking your favorite food.
             </Text>
           </View>
           <View className="gap-4">
+            <View className="w-full">
+              <Label>
+                <Text size="lg">Username</Text>
+              </Label>
+              <Input placeholderClassName="font-[rosarivo]" aria-labelledby="textareaLabel" />
+            </View>
             <View className="w-full">
               <Label>
                 <Text size="lg">Email</Text>
@@ -53,13 +59,13 @@ export default function Index() {
             </View>
           </View>
           <View className="items-center gap-4">
-            <Button onPress={() => router.replace({ pathname: '(tabs)/home' })} className="w-full">
-              <Text>Login</Text>
+            <Button onPress={() => router.replace({ pathname: 'index' })} className="w-full">
+              <Text>Register</Text>
             </Button>
             <View className="items-center gap-2">
-              <Text className="text-muted-foreground"> Don't have an account?</Text>
-              <Text className="text-primary" onPress={() => router.replace({ pathname: 'signup' })}>
-                Sign up
+              <Text className="text-muted-foreground">Already have an account ?</Text>
+              <Text className="text-primary" onPress={() => router.replace({ pathname: 'index' })}>
+                Login
               </Text>
             </View>
           </View>

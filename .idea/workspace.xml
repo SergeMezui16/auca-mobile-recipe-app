@@ -18,10 +18,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:drawer): add navigation and calculator screen&#10;&#10;Introduce a drawer-based navigation system with two screens: Home and Calculator. Implement a fully functional calculator with basic arithmetic operations, clear, percentage, decimal handling, and sign toggle. Add reusable calculator and menu icons for better UI consistency.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/blocks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/blocks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/icons/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -151,7 +152,7 @@
       <workItem from="1741277851855" duration="4979000" />
       <workItem from="1741338447154" duration="20508000" />
       <workItem from="1741359274761" duration="12537000" />
-      <workItem from="1741439311025" duration="4502000" />
+      <workItem from="1741439311025" duration="9483000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -225,7 +226,31 @@
       <option name="project" value="LOCAL" />
       <updated>1741441566547</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat(app:network): add Network page with connectivity details&#10;&#10;Implemented a new Network page to display connectivity information, including IP, type, internet reachability, and connection state. Added related components like `ListBlock` and `NetworkIcon`, and introduced `expo-network` and `expo-battery` dependencies for functionality. Updated navigation and icons to include the new Network screen.">
+      <option name="closed" value="true" />
+      <created>1741443993261</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741443993261</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat(app:battery): add battery status and network info page&#10;&#10;Introduce a new Battery Status page displaying battery level, state, and power mode. Added refresh functionality to fetch and display the device's IP address. Utilized `expo-battery` and `expo-network` for fetching device state.">
+      <option name="closed" value="true" />
+      <created>1741443999668</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1741443999668</updated>
+    </task>
+    <task id="LOCAL-00012" summary="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly.">
+      <option name="closed" value="true" />
+      <created>1741448072185</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741448072185</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +278,10 @@
     <MESSAGE value="feat(app:ui): implement recipes and global tab components&#10;&#10;Added new recipe navigation, custom components including Alert, Dialog, Tabs, Avatar, and Textarea. Organized app structure with revamped layouts, portals, and gesture handlers for better user experience. Introduced dependencies like `@rn-primitives` and `@shopify/flash-list` to enhance functionality." />
     <MESSAGE value="refactor(app:structure): remove outdated tabs and reorganize navigation&#10;&#10;Removed obsolete tabs including recipes, search, and settings. Introduced a drawer-based structure with new tools like a calculator. Updated dependencies and adjusted layouts for streamlined navigation." />
     <MESSAGE value="feat(app:drawer): add navigation and calculator screen&#10;&#10;Introduce a drawer-based navigation system with two screens: Home and Calculator. Implement a fully functional calculator with basic arithmetic operations, clear, percentage, decimal handling, and sign toggle. Add reusable calculator and menu icons for better UI consistency." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(app:drawer): add navigation and calculator screen&#10;&#10;Introduce a drawer-based navigation system with two screens: Home and Calculator. Implement a fully functional calculator with basic arithmetic operations, clear, percentage, decimal handling, and sign toggle. Add reusable calculator and menu icons for better UI consistency." />
+    <MESSAGE value="feat(app:network): add Network page with connectivity details&#10;&#10;Implemented a new Network page to display connectivity information, including IP, type, internet reachability, and connection state. Added related components like `ListBlock` and `NetworkIcon`, and introduced `expo-network` and `expo-battery` dependencies for functionality. Updated navigation and icons to include the new Network screen." />
+    <MESSAGE value="feat(app:battery): add battery status and network info page&#10;&#10;Introduce a new Battery Status page displaying battery level, state, and power mode. Added refresh functionality to fetch and display the device's IP address. Utilized `expo-battery` and `expo-network` for fetching device state." />
+    <MESSAGE value="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly." />
+    <option name="LAST_COMMIT_MESSAGE" value="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

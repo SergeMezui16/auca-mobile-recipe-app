@@ -3,7 +3,13 @@ import { LucideIcon } from 'lucide-react-native';
 import React from 'react';
 
 import { HeaderLogo, HeaderTitle, HeaderToggleTheme } from '@/components/blocks';
-import { BatteryIcon, CalculatorIcon, HomeIcon, NetworkIcon } from '@/components/icons';
+import {
+  BatteryIcon,
+  BluetoothIcon,
+  CalculatorIcon,
+  HomeIcon,
+  NetworkIcon,
+} from '@/components/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 
@@ -45,6 +51,14 @@ export default function TabLayout() {
         options={{
           title: 'Battery',
           tabBarIcon: (props) => <TabBarIcon {...props} icon={BatteryIcon} />,
+          tabBarLabel: TabBarLabel,
+        }}
+      />
+      <Tabs.Screen
+        name="bluetooth"
+        options={{
+          title: 'Bluetooth',
+          tabBarIcon: (props) => <TabBarIcon {...props} icon={BluetoothIcon} />,
           tabBarLabel: TabBarLabel,
         }}
       />

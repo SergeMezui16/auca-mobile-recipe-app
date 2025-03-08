@@ -9,3 +9,5 @@ export * from './star';
 export * from './profile';
 export * from './search';
 export * from './home';
+export * from './author';
+export * from './comment';

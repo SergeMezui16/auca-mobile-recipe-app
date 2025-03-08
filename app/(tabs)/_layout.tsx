@@ -17,7 +17,7 @@ export default function TabLayout() {
         headerRight: () => <HeaderToggleTheme />,
       }}>
       <Tabs.Screen
-        name="index"
+        name="(tabs)/index"
         options={{
           title: 'Home',
           tabBarIcon: (props) => <TabBarIcon {...props} icon={HomeIcon} />,
@@ -25,7 +25,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="search"
+        name="(tabs)/search"
         options={{
           title: 'Search',
           tabBarIcon: (props) => <TabBarIcon {...props} icon={SearchIcon} />,
@@ -33,7 +33,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="new"
+        name="(tabs)/new"
         options={{
           title: 'New',
           tabBarIcon: (props) => <TabBarIcon {...props} icon={PlusIcon} />,
@@ -41,13 +41,14 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="(tabs)/settings"
         options={{
           title: 'Settings',
           tabBarIcon: (props) => <TabBarIcon {...props} icon={ProfileIcon} />,
           tabBarLabel: TabBarLabel,
         }}
       />
+      <Tabs.Screen name="(tabs)/recipes" options={{ href: null }} />
     </Tabs>
   );
 }

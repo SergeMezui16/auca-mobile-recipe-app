@@ -1,8 +1,10 @@
 import '../global.css';
+import { PortalHost } from '@rn-primitives/portal';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React, { PropsWithChildren, useEffect } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { ThemeProvider } from '@/components/providers/theme-provider';
 
@@ -25,12 +27,16 @@ export default function RootLayout({ children }: PropsWithChildren) {
   }
 
   return (
-    <ThemeProvider>
-      <StatusBar style="auto" />
-      {children}
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack>
-    </ThemeProvider>
+    <GestureHandlerRootView>
+      <ThemeProvider>
+        <StatusBar style="auto" />
+        {children}
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack>
+        <PortalHost />
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }

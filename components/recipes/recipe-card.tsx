@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import React from 'react';
 import { View } from 'react-native';
 
@@ -11,6 +12,7 @@ type RecipeCardProps = {
 };
 
 export const RecipeCard = ({ id }: RecipeCardProps) => {
+  const router = useRouter();
   return (
     <View className="h-[153px] w-full flex-row justify-between gap-1">
       <View className="h-[153px] w-1/2">
@@ -45,7 +47,10 @@ export const RecipeCard = ({ id }: RecipeCardProps) => {
           <Button size="sm" variant="outline">
             <StarIcon className="stroke-1 text-foreground" size={14} />
           </Button>
-          <Button className="flex-1" size="sm">
+          <Button
+            onPress={() => router.push({ pathname: '(tabs)/recipes/[id]', params: { id } })}
+            className="flex-1"
+            size="sm">
             <Text>Cook Now</Text>
           </Button>
         </View>

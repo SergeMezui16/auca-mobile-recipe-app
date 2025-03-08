@@ -9,7 +9,7 @@ const TextClassContext = React.createContext<string | undefined>(undefined);
 
 type TextProps = SlottableTextProps & {
   font?: 'roboto' | 'rosarivo';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 };
 
 const Text = React.forwardRef<TextRef, TextProps>(
@@ -31,6 +31,7 @@ const Text = React.forwardRef<TextRef, TextProps>(
             'text-lg': size === 'md',
             'text-xl': size === 'lg',
             'text-2xl': size === 'xl',
+            'text-4xl': size === '2xl',
           },
           className
         )}

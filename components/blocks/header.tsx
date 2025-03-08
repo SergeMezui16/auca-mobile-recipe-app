@@ -1,9 +1,9 @@
+import { SunIcon } from 'lucide-react-native';
 import React, { useEffect } from 'react';
 
 import { CookingPotIcon, MoonStarIcon } from '@/components/icons';
 import { Text } from '@/components/ui/text';
 import { useTheme } from '@/hooks/utils';
-import { SunIcon } from 'lucide-react-native';
 
 export const HeaderTitle = () => {
   return (
@@ -21,7 +21,7 @@ export const HeaderToggleTheme = () => {
   const { theme, setTheme, toggle } = useTheme();
 
   useEffect(() => {
-    setTheme('dark');
+    setTheme('light');
   }, []);
 
   const Icon = theme === 'light' ? MoonStarIcon : SunIcon;

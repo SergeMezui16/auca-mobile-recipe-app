@@ -1,6 +1,7 @@
 import { usePowerState } from 'expo-battery';
-import { getIpAddressAsync, useNetworkState } from 'expo-network';
-import { useEffect, useState } from 'react';
+import { useNetworkState } from 'expo-network';
+import * as Notifications from 'expo-notifications';
+import { useEffect } from 'react';
 import { View } from 'react-native';
 
 import { ListBlock, SafeView } from '@/components/blocks';
@@ -8,10 +9,9 @@ import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 
 export default function NetworkPage() {
-  const [ip, setIp] = useState('');
   const powerState = usePowerState();
-
   const networkState = useNetworkState();
+  const batteryLevel = Math.round(powerState.batteryLevel * 100).toString() + '%';
 
   useEffect(() => {}, [networkState]);
 
@@ -30,16 +30,26 @@ export default function NetworkPage() {
         </Text>
       </View>
       <View className="border-t border-border" />
-      <ListBlock title="Level" value={Math.round(powerState.batteryLevel * 100).toString() + '%'} />
+      <ListBlock title="Level" value={batteryLevel} />
       <ListBlock title="State" value={getBatteryState(powerState.batteryState)} />
       <ListBlock title="Power mode" value={powerState.lowPowerMode ? 'Low' : 'Normal'} />
       <Button
         onPress={async () => {
-          const ip = await getIpAddressAsync();
-          console.log('refresh', ip);
-          setIp(ip);
+          await Notifications.setNotificationChannelAsync('battery', {
+            name: 'Battery',
+            importance: Notifications.AndroidImportance.HIGH,
+          });
+          await Notifications.scheduleNotificationAsync({
+            content: {
+              title: `Your Battery level is ${batteryLevel}.`,
+            },
+            trigger: {
+              seconds: 0,
+              channelId: 'network',
+            },
+          });
         }}>
-        <Text>Refresh</Text>
+        <Text>Notify Battery level</Text>
       </Button>
     </SafeView>
   );

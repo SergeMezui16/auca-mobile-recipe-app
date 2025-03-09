@@ -18,12 +18,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/eas.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/icons/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/battery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/battery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/network.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/network.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -46,18 +47,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "SergeMezui16"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SergeMezui16&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SergeMezui16/auca-mobile-recipe-app.git",
-    "accountId": "0fd2a9d7-4c5b-4fda-9344-9486d3a0e94c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SergeMezui16/auca-mobile-recipe-app.git&quot;,
+    &quot;accountId&quot;: &quot;0fd2a9d7-4c5b-4fda-9344-9486d3a0e94c&quot;
   }
-}]]></component>
+}</component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
@@ -79,27 +80,27 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "assignment",
-    "last_opened_file_path": "/home/sergemezui/www/auca/mobile/assignment/components/icons",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.android.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/home/sergemezui/www/auca/mobile/assignment/node_modules/prettier",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "/home/sergemezui/www/auca/mobile/assignment/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;assignment&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sergemezui/www/auca/mobile/assignment/components/icons&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.android.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/sergemezui/www/auca/mobile/assignment/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/sergemezui/www/auca/mobile/assignment/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/components/icons" />
@@ -134,8 +135,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PS-243.24978.50" />
-        <option value="bundled-php-predefined-a98d8de5180a-fbeb0b58ac0f-com.jetbrains.php.sharedIndexes-PS-243.24978.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PS-243.23654.168" />
+        <option value="bundled-php-predefined-a98d8de5180a-4c3855d0ab16-com.jetbrains.php.sharedIndexes-PS-243.23654.168" />
       </set>
     </attachedChunks>
   </component>
@@ -152,7 +153,10 @@
       <workItem from="1741277851855" duration="4979000" />
       <workItem from="1741338447154" duration="20508000" />
       <workItem from="1741359274761" duration="12537000" />
-      <workItem from="1741439311025" duration="9483000" />
+      <workItem from="1741439311025" duration="11218000" />
+      <workItem from="1741523821882" duration="483000" />
+      <workItem from="1741524457884" duration="1399000" />
+      <workItem from="1741526944717" duration="1466000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -250,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741448072185</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat(app:bluetooth): add BLE integration and Bluetooth screen&#10;&#10;Introduce Bluetooth Low Energy (BLE) functionality with a custom hook for scanning, connecting, and data streaming from devices. Add a new Bluetooth screen with a basic UI and integrate it into the drawer and tabs navigation. Updated dependencies and configurations to include BLE support via `react-native-bluetooth-classic`.">
+      <option name="closed" value="true" />
+      <created>1741449164157</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741449164157</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +293,8 @@
     <MESSAGE value="feat(app:network): add Network page with connectivity details&#10;&#10;Implemented a new Network page to display connectivity information, including IP, type, internet reachability, and connection state. Added related components like `ListBlock` and `NetworkIcon`, and introduced `expo-network` and `expo-battery` dependencies for functionality. Updated navigation and icons to include the new Network screen." />
     <MESSAGE value="feat(app:battery): add battery status and network info page&#10;&#10;Introduce a new Battery Status page displaying battery level, state, and power mode. Added refresh functionality to fetch and display the device's IP address. Utilized `expo-battery` and `expo-network` for fetching device state." />
     <MESSAGE value="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly." />
-    <option name="LAST_COMMIT_MESSAGE" value="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly." />
+    <MESSAGE value="feat(app:bluetooth): add BLE integration and Bluetooth screen&#10;&#10;Introduce Bluetooth Low Energy (BLE) functionality with a custom hook for scanning, connecting, and data streaming from devices. Add a new Bluetooth screen with a basic UI and integrate it into the drawer and tabs navigation. Updated dependencies and configurations to include BLE support via `react-native-bluetooth-classic`." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(app:bluetooth): add BLE integration and Bluetooth screen&#10;&#10;Introduce Bluetooth Low Energy (BLE) functionality with a custom hook for scanning, connecting, and data streaming from devices. Add a new Bluetooth screen with a basic UI and integrate it into the drawer and tabs navigation. Updated dependencies and configurations to include BLE support via `react-native-bluetooth-classic`." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "recipe-mobile-app",
-    "slug": "recipe-mobile-app",
-    "scheme": "recipe-mobile-app",
+    "name": "AUCA Mobile App",
+    "slug": "auca-mobile-app",
+    "scheme": "auca-mobile-app",
     "version": "1.0.0",
     "newArchEnabled": true,
     "web": {
@@ -24,6 +24,19 @@
             "com.myCompany.p2"
           ]
         }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/pot-logo.png",
+          "color": "#ffffff",
+          "defaultChannel": "default",
+          "sounds": [
+            "./local/assets/notification_sound.wav",
+            "./local/assets/notification_sound_other.wav"
+          ],
+          "enableBackgroundRemoteNotifications": false
+        }
       ]
     ],
     "orientation": "portrait",
@@ -38,12 +51,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sergemezui.aucamobileapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.BLUETOOTH_ADVERTISE"
+      ],
+      "package": "com.sergemezui.aucamobileapp"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "b5e26a42-3891-41dd-9370-75e4a24b14fc"
       }
     }
   }

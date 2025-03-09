@@ -1,4 +1,5 @@
 import { getIpAddressAsync, useNetworkState } from 'expo-network';
+import * as Notifications from 'expo-notifications';
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 
@@ -34,10 +35,22 @@ export default function NetworkPage() {
       <Button
         onPress={async () => {
           const ip = await getIpAddressAsync();
-          console.log('refresh', ip);
+          await Notifications.setNotificationChannelAsync('network', {
+            name: 'Network',
+            importance: Notifications.AndroidImportance.HIGH,
+          });
+          await Notifications.scheduleNotificationAsync({
+            content: {
+              title: `Your IP is ${ip}.`,
+            },
+            trigger: {
+              seconds: 0,
+              channelId: 'network',
+            },
+          });
           setIp(ip);
         }}>
-        <Text>Refresh</Text>
+        <Text>Notify the Ip</Text>
       </Button>
     </SafeView>
   );

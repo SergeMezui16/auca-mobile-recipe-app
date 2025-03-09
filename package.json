@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "android": "expo start --android --clear",
-    "ios": "expo start --ios",
+    "ios": "expo run:ios",
     "start": "expo start --clear",
     "prebuild": "expo prebuild",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
@@ -48,7 +48,8 @@
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "with-rn-bluetooth-classic": "^1.0.5",
-    "expo-notifications": "~0.29.13"
+    "expo-notifications": "~0.29.13",
+    "expo-dev-client": "~5.0.12"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

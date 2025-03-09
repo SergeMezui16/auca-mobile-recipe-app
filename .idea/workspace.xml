@@ -18,13 +18,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/eas.json" afterDir="false" />
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:notifications): add notification system integration&#10;&#10;Integrated `expo-notifications` for push notifications, allowing users to receive updates like IP address and battery level. Updated app configuration, dependencies, and notification handling logic for improved user engagement.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/battery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/battery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/network.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/network.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/bluetooth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/bluetooth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useBLE.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useBLE.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -135,8 +134,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PS-243.23654.168" />
-        <option value="bundled-php-predefined-a98d8de5180a-4c3855d0ab16-com.jetbrains.php.sharedIndexes-PS-243.23654.168" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PS-243.24978.50" />
+        <option value="bundled-php-predefined-a98d8de5180a-fbeb0b58ac0f-com.jetbrains.php.sharedIndexes-PS-243.24978.50" />
       </set>
     </attachedChunks>
   </component>
@@ -157,6 +156,7 @@
       <workItem from="1741523821882" duration="483000" />
       <workItem from="1741524457884" duration="1399000" />
       <workItem from="1741526944717" duration="1466000" />
+      <workItem from="1741528469986" duration="5015000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -262,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741449164157</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat(app:notifications): add notification system integration&#10;&#10;Integrated `expo-notifications` for push notifications, allowing users to receive updates like IP address and battery level. Updated app configuration, dependencies, and notification handling logic for improved user engagement.">
+      <option name="closed" value="true" />
+      <created>1741528513368</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741528513368</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +302,8 @@
     <MESSAGE value="feat(app:battery): add battery status and network info page&#10;&#10;Introduce a new Battery Status page displaying battery level, state, and power mode. Added refresh functionality to fetch and display the device's IP address. Utilized `expo-battery` and `expo-network` for fetching device state." />
     <MESSAGE value="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly." />
     <MESSAGE value="feat(app:bluetooth): add BLE integration and Bluetooth screen&#10;&#10;Introduce Bluetooth Low Energy (BLE) functionality with a custom hook for scanning, connecting, and data streaming from devices. Add a new Bluetooth screen with a basic UI and integrate it into the drawer and tabs navigation. Updated dependencies and configurations to include BLE support via `react-native-bluetooth-classic`." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(app:bluetooth): add BLE integration and Bluetooth screen&#10;&#10;Introduce Bluetooth Low Energy (BLE) functionality with a custom hook for scanning, connecting, and data streaming from devices. Add a new Bluetooth screen with a basic UI and integrate it into the drawer and tabs navigation. Updated dependencies and configurations to include BLE support via `react-native-bluetooth-classic`." />
+    <MESSAGE value="feat(app:notifications): add notification system integration&#10;&#10;Integrated `expo-notifications` for push notifications, allowing users to receive updates like IP address and battery level. Updated app configuration, dependencies, and notification handling logic for improved user engagement." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(app:notifications): add notification system integration&#10;&#10;Integrated `expo-notifications` for push notifications, allowing users to receive updates like IP address and battery level. Updated app configuration, dependencies, and notification handling logic for improved user engagement." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -31,10 +31,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="calculator"
+        name="bluetooth"
         options={{
-          title: 'Calculator',
-          tabBarIcon: (props) => <TabBarIcon {...props} icon={CalculatorIcon} />,
+          title: 'Bluetooth',
+          tabBarIcon: (props) => <TabBarIcon {...props} icon={BluetoothIcon} />,
           tabBarLabel: TabBarLabel,
         }}
       />
@@ -55,10 +55,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="bluetooth"
+        name="calculator"
         options={{
-          title: 'Bluetooth',
-          tabBarIcon: (props) => <TabBarIcon {...props} icon={BluetoothIcon} />,
+          title: 'Calculator',
+          tabBarIcon: (props) => <TabBarIcon {...props} icon={CalculatorIcon} />,
           tabBarLabel: TabBarLabel,
         }}
       />

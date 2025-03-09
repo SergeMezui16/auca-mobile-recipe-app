@@ -118,7 +118,12 @@ export const AddComment = () => {
           <Label>
             <Text>Message</Text>
           </Label>
-          <Textarea placeholder="Write your comment..." aria-labelledby="textareaLabel" />
+          <Textarea
+            className="font-[rosarivo]"
+            placeholderClassName="font-[rosarivo]"
+            placeholder="Write your comment..."
+            aria-labelledby="textareaLabel"
+          />
         </View>
         <DialogFooter>
           <DialogClose asChild>

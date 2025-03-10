@@ -18,14 +18,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:notifications): add notification system integration&#10;&#10;Integrated `expo-notifications` for push notifications, allowing users to receive updates like IP address and battery level. Updated app configuration, dependencies, and notification handling logic for improved user engagement.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:bluetooth): refactor BLE integration and update UI&#10;&#10;Refactored Bluetooth Low Energy (BLE) integration to improve initialization, state management, and permission handling. Replaced outdated dependencies with `react-native-ble-plx` and added enhanced logic for Bluetooth state monitoring. Updated navigation and UI components for easier access to Bluetooth features.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/bluetooth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/bluetooth.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useBLE.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useBLE.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +150,7 @@
       <workItem from="1741523821882" duration="483000" />
       <workItem from="1741524457884" duration="1399000" />
       <workItem from="1741526944717" duration="1466000" />
-      <workItem from="1741528469986" duration="5015000" />
+      <workItem from="1741528469986" duration="5977000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -270,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741528513368</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat(app:bluetooth): refactor BLE integration and update UI&#10;&#10;Refactored Bluetooth Low Energy (BLE) integration to improve initialization, state management, and permission handling. Replaced outdated dependencies with `react-native-ble-plx` and added enhanced logic for Bluetooth state monitoring. Updated navigation and UI components for easier access to Bluetooth features.">
+      <option name="closed" value="true" />
+      <created>1741533681449</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1741533681449</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +305,8 @@
     <MESSAGE value="`fix(project:recipe-mobile-app): restore package.json file`&#10;&#10;The `package.json` file was mistakenly deleted and has been restored to its original state. This includes dependencies, devDependencies, scripts, and configuration necessary for the project to function correctly." />
     <MESSAGE value="feat(app:bluetooth): add BLE integration and Bluetooth screen&#10;&#10;Introduce Bluetooth Low Energy (BLE) functionality with a custom hook for scanning, connecting, and data streaming from devices. Add a new Bluetooth screen with a basic UI and integrate it into the drawer and tabs navigation. Updated dependencies and configurations to include BLE support via `react-native-bluetooth-classic`." />
     <MESSAGE value="feat(app:notifications): add notification system integration&#10;&#10;Integrated `expo-notifications` for push notifications, allowing users to receive updates like IP address and battery level. Updated app configuration, dependencies, and notification handling logic for improved user engagement." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(app:notifications): add notification system integration&#10;&#10;Integrated `expo-notifications` for push notifications, allowing users to receive updates like IP address and battery level. Updated app configuration, dependencies, and notification handling logic for improved user engagement." />
+    <MESSAGE value="feat(app:bluetooth): refactor BLE integration and update UI&#10;&#10;Refactored Bluetooth Low Energy (BLE) integration to improve initialization, state management, and permission handling. Replaced outdated dependencies with `react-native-ble-plx` and added enhanced logic for Bluetooth state monitoring. Updated navigation and UI components for easier access to Bluetooth features." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(app:bluetooth): refactor BLE integration and update UI&#10;&#10;Refactored Bluetooth Low Energy (BLE) integration to improve initialization, state management, and permission handling. Replaced outdated dependencies with `react-native-ble-plx` and added enhanced logic for Bluetooth state monitoring. Updated navigation and UI components for easier access to Bluetooth features." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

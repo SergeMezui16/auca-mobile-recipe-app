@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "android": "expo start --android --clear",
-    "ios": "expo start --ios",
+    "ios": "expo run:ios",
     "start": "expo start --clear",
     "prebuild": "expo prebuild",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
@@ -43,7 +43,8 @@
     "react-native-svg": "15.8.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
-    "expo-image-picker": "~16.0.6"
+    "expo-image-picker": "~16.0.6",
+    "expo-dev-client": "~5.0.12"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

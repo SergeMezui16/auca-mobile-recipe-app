@@ -18,11 +18,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:auth): add login and signup screens with UI components&#10;&#10;Introduced new login and signup screens featuring reusable UI components like Checkbox, Input, and Button. Enhanced navigation structure and updated tab names for better readability. Added dependencies for checkbox functionality and adjusted default exports for consistency.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:recipes): enhance UI and add image picker functionality&#10;&#10;Added font styling to Textarea and introduced an image picker for recipe creation using `expo-image-picker`. Updated `New` screen to include new input fields, image selection, and navigation logic. Updated dependencies in `package.json` to support the new features.">
+      <change afterPath="$PROJECT_DIR$/eas.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/new.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/new.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/recipes/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/recipes/[id].tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -128,8 +127,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PS-243.24978.50" />
-        <option value="bundled-php-predefined-a98d8de5180a-fbeb0b58ac0f-com.jetbrains.php.sharedIndexes-PS-243.24978.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PS-243.23654.168" />
+        <option value="bundled-php-predefined-a98d8de5180a-4c3855d0ab16-com.jetbrains.php.sharedIndexes-PS-243.23654.168" />
       </set>
     </attachedChunks>
   </component>
@@ -147,7 +146,9 @@
       <workItem from="1741338447154" duration="20508000" />
       <workItem from="1741359274761" duration="12638000" />
       <workItem from="1741438055648" duration="1010000" />
-      <workItem from="1741519641487" duration="1429000" />
+      <workItem from="1741519641487" duration="2477000" />
+      <workItem from="1741524337584" duration="118000" />
+      <workItem from="1741526911639" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -213,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741437409605</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat(app:recipes): enhance UI and add image picker functionality&#10;&#10;Added font styling to Textarea and introduced an image picker for recipe creation using `expo-image-picker`. Updated `New` screen to include new input fields, image selection, and navigation logic. Updated dependencies in `package.json` to support the new features.">
+      <option name="closed" value="true" />
+      <created>1741521189833</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741521189833</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +249,8 @@
     <MESSAGE value="feat(app:tabs): add recipe components and update tabs&#10;&#10;Implemented `RecipeCard` and `RecipeList` components for recipe management. Refactored `index.tsx` and `search.tsx` to integrate these components with improved UI. Added a reusable `Input` component for the search functionality." />
     <MESSAGE value="feat(app:ui): implement recipes and global tab components&#10;&#10;Added new recipe navigation, custom components including Alert, Dialog, Tabs, Avatar, and Textarea. Organized app structure with revamped layouts, portals, and gesture handlers for better user experience. Introduced dependencies like `@rn-primitives` and `@shopify/flash-list` to enhance functionality." />
     <MESSAGE value="feat(app:auth): add login and signup screens with UI components&#10;&#10;Introduced new login and signup screens featuring reusable UI components like Checkbox, Input, and Button. Enhanced navigation structure and updated tab names for better readability. Added dependencies for checkbox functionality and adjusted default exports for consistency." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(app:auth): add login and signup screens with UI components&#10;&#10;Introduced new login and signup screens featuring reusable UI components like Checkbox, Input, and Button. Enhanced navigation structure and updated tab names for better readability. Added dependencies for checkbox functionality and adjusted default exports for consistency." />
+    <MESSAGE value="feat(app:recipes): enhance UI and add image picker functionality&#10;&#10;Added font styling to Textarea and introduced an image picker for recipe creation using `expo-image-picker`. Updated `New` screen to include new input fields, image selection, and navigation logic. Updated dependencies in `package.json` to support the new features." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(app:recipes): enhance UI and add image picker functionality&#10;&#10;Added font styling to Textarea and introduced an image picker for recipe creation using `expo-image-picker`. Updated `New` screen to include new input fields, image selection, and navigation logic. Updated dependencies in `package.json` to support the new features." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

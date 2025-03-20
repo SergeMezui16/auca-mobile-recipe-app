@@ -41,7 +41,23 @@ export default function NetworkPage() {
           });
           await Notifications.scheduleNotificationAsync({
             content: {
-              title: `Your Battery level is ${batteryLevel}.`,
+              title: 'Battery Level',
+              subtitle: batteryLevel,
+              body: `Your Battery level is ${batteryLevel}.`,
+              vibrate: [1, 1],
+              interruptionLevel: 'critical',
+              attachments: [
+                {
+                  identifier: 'serge',
+                  url: 'https://i.imgur.com/1111111.jpg',
+                  type: 'image/jpeg',
+                  thumbnailTime: 1,
+                },
+              ],
+              priority: 'low',
+              data: {
+                batteryLevel,
+              },
             },
             trigger: {
               seconds: 0,

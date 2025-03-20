@@ -66,7 +66,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   }
 
   return (
-    <GestureHandlerRootView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider>
         <StatusBar style="auto" />
         {children}

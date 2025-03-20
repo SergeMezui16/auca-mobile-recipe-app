@@ -1,9 +1,9 @@
 import { FlashList } from '@shopify/flash-list';
-import { useRouter } from 'expo-router';
+import { router, useRouter } from 'expo-router';
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 
-import { SafeView } from '@/components/blocks';
+import { SafeView, SwipeListItem } from '@/components/blocks';
 import { ArrowRightIcon } from '@/components/icons';
 import { CalculatorIcon } from '@/components/icons/calculator';
 import { Button } from '@/components/ui/button';
@@ -35,6 +35,8 @@ const LIST = [
     name: 'Calculator',
     icon: CalculatorIcon,
     route: 'calculator',
+    description:
+      'A custom calculator that enable to operate addition, division, subtraction and multiplication.',
   },
   {
     name: 'Bluetooth',
@@ -44,20 +46,46 @@ const LIST = [
 ];
 
 const ToolList = () => {
-  const router = useRouter();
   return (
     <FlashList
-      renderItem={({ item }) => (
-        <View className="my-2 flex flex-row items-center justify-between gap-2">
-          <Text>{item.name}</Text>
-          <Button size="sm" variant="outline" onPress={() => router.push(item.route)}>
-            <Text>See more</Text>
-          </Button>
-        </View>
-      )}
+      keyExtractor={(item) => item.name}
+      renderItem={({ item }) => <ListItem item={item} />}
       data={LIST}
+      ItemSeparatorComponent={() => <Separator />}
     />
   );
+};
+
+export const ListItem = ({ item }: { item: (typeof LIST)[number] }) => {
+  return (
+    <SwipeListItem
+      className="rounded bg-background py-2"
+      leftButton={
+        <View>
+          <Text>Bookmark</Text>
+        </View>
+      }
+      rightButton={
+        <View>
+          <Text>Delete</Text>
+        </View>
+      }>
+      {/* Main Content */}
+      <View className="flex flex-1 flex-row items-center justify-between gap-2 bg-white">
+        <View>
+          <Text>{item.name}</Text>
+          <Text>{item.description}</Text>
+        </View>
+        <Button size="sm" variant="outline" onPress={() => router.push(item.route)}>
+          <Text>See more</Text>
+        </Button>
+      </View>
+    </SwipeListItem>
+  );
+};
+
+const Separator = () => {
+  return <View className="border border-b border-border" />;
 };
 
 const Welcome = () => {

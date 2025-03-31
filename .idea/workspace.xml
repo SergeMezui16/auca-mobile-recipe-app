@@ -18,10 +18,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:drawer): add swipe-to-delete functionality&#10;&#10;Implement two new swipeable screens with delete functionality using `SlideToLeft`. Added animation handling with React Native Reanimated. Updated drawer layout and navigation structure to include the new screens.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/contacts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/contacts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/preferences.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/preferences.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/swipe2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/swipe2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +155,7 @@
       <workItem from="1742954413619" duration="58000" />
       <workItem from="1743368840566" duration="6692000" />
       <workItem from="1743454598766" duration="436000" />
-      <workItem from="1743455051748" duration="8610000" />
+      <workItem from="1743455051748" duration="10279000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -252,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743462879660</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency.">
+      <option name="closed" value="true" />
+      <created>1743463739186</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1743463739186</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +294,8 @@
     <MESSAGE value="feat(app:drawer): refactor navigation to drawer-based layout&#10;&#10;Migrated app structure from tabs to a drawer-based navigation layout for better organization. Added custom hooks for" />
     <MESSAGE value="feat(app:drawer): add new screens to drawer navigation" />
     <MESSAGE value="feat(app:drawer): add swipe-to-delete functionality&#10;&#10;Implement two new swipeable screens with delete functionality using `SlideToLeft`. Added animation handling with React Native Reanimated. Updated drawer layout and navigation structure to include the new screens." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(app:drawer): add swipe-to-delete functionality&#10;&#10;Implement two new swipeable screens with delete functionality using `SlideToLeft`. Added animation handling with React Native Reanimated. Updated drawer layout and navigation structure to include the new screens." />
+    <MESSAGE value="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

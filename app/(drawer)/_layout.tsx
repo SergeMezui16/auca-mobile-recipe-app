@@ -4,7 +4,7 @@ import { LucideIcon } from 'lucide-react-native';
 import React from 'react';
 import { View } from 'react-native';
 
-import { ContactIcon, HomeIcon } from '@/components/icons';
+import { ContactIcon, HomeIcon, TodoIcon } from '@/components/icons';
 import { PenIcon } from '@/components/icons/pen';
 import { Image } from '@/components/ui/image';
 import { Text } from '@/components/ui/text';
@@ -55,6 +55,24 @@ export default function Layout() {
           headerShown: true,
           drawerLabel: ({ focused }) => <DrawerLabel title="Preferences" focused={focused} />,
           drawerIcon: (props) => <DrawerIcon {...props} icon={PenIcon} />,
+        }}
+      />
+      <Drawer.Screen
+        name="swipe1"
+        options={{
+          headerTitle: 'Swipe 1',
+          headerShown: true,
+          drawerLabel: ({ focused }) => <DrawerLabel title="Swipe 1" focused={focused} />,
+          drawerIcon: (props) => <DrawerIcon {...props} icon={TodoIcon} />,
+        }}
+      />
+      <Drawer.Screen
+        name="swipe2"
+        options={{
+          headerTitle: 'Swipe 2',
+          headerShown: true,
+          drawerLabel: ({ focused }) => <DrawerLabel title="Swipe 2" focused={focused} />,
+          drawerIcon: (props) => <DrawerIcon {...props} icon={TodoIcon} />,
         }}
       />
     </Drawer>

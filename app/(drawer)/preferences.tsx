@@ -1,5 +1,5 @@
 import * as ImagePicker from 'expo-image-picker';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { KeyboardAvoidingView, Pressable, View } from 'react-native';
 import { useDebounceCallback } from 'usehooks-ts';
 
@@ -16,6 +16,8 @@ const Preferences = React.memo(() => {
   const setEmail = useDebounceCallback((v) => setItemValue('email', v), 100);
   const setPhone = useDebounceCallback((v) => setItemValue('phone', v), 100);
   const setAddr = useDebounceCallback((v) => setItemValue('addr', v), 100);
+
+  useEffect(() => {}, []);
 
   return (
     <SafeView className="flex-1 gap-4">
@@ -77,6 +79,8 @@ function ProfilePicker() {
       setImage(result.assets[0].uri);
     }
   };
+
+  useEffect(() => {}, []);
 
   return (
     <View className="mb-10 flex items-center justify-center gap-4 border-b border-border pb-4">

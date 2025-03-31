@@ -2,7 +2,7 @@ import { FlashList } from '@shopify/flash-list';
 import React from 'react';
 import { View } from 'react-native';
 
-import { RecipeCard } from '.';
+import { RecipeCard } from './recipe-card';
 
 export const RecipeList = () => {
   return (

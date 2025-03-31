@@ -1,25 +1,19 @@
+import { DrawerToggleButton } from '@react-navigation/drawer';
 import { Tabs } from 'expo-router';
 import { LucideIcon } from 'lucide-react-native';
 import React from 'react';
 
-import { HeaderLogo, HeaderTitle, HeaderToggleTheme } from '@/components/blocks';
 import { HomeIcon, PlusIcon, ProfileIcon, SearchIcon } from '@/components/icons';
 import { Text } from '@/components/ui/text';
 import { cn } from '@/lib/utils';
 
 export default function TabLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: true,
-        headerTitle: () => <HeaderTitle />,
-        headerLeft: () => <HeaderLogo />,
-        headerRight: () => <HeaderToggleTheme />,
-      }}>
+    <Tabs screenOptions={{ headerShown: true, headerLeft: DrawerToggleButton }}>
       <Tabs.Screen
         name="home"
         options={{
-          title: 'Home',
+          title: 'Recipes',
           tabBarIcon: (props) => <TabBarIcon {...props} icon={HomeIcon} />,
           tabBarLabel: TabBarLabel,
         }}

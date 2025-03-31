@@ -9,7 +9,7 @@ export const LogoHead = () => {
     <View className="items-center gap-4">
       <Image className="h-[80px] w-[80px]" source={require('@/assets/images/pot-logo.png')} />
       <Text size="2xl" className="h-10 origin-bottom pt-4">
-        Recipe Hub Share
+        Recipe Hub Share 2
       </Text>
     </View>
   );

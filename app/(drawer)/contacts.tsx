@@ -38,8 +38,8 @@ export default function Contacts() {
 
 const ContactItem = ({ contact }: { contact: Contact }) => {
   return (
-    <View className="flex-col">
-      <Text size="xl" className="text-black">
+    <View className="flex-col rounded-lg bg-foreground/10 p-4">
+      <Text size="xl" className="">
         {contact.name}
       </Text>
       <Text className="text-muted-foreground">

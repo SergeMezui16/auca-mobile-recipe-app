@@ -1,5 +1,5 @@
 import * as ImagePicker from 'expo-image-picker';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { KeyboardAvoidingView, Pressable, View } from 'react-native';
 import { useDebounceCallback } from 'usehooks-ts';
 
@@ -66,7 +66,11 @@ const Preferences = React.memo(() => {
 });
 
 function ProfilePicker() {
-  const setImage = useDebounceCallback((v) => setItemValue('profile', v), 100);
+  const [value, setValue] = useState(getItemValue('profile'));
+  const setImage = useDebounceCallback((v) => {
+    setValue(v);
+    setItemValue('profile', v);
+  }, 100);
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ['images'],
@@ -87,7 +91,7 @@ function ProfilePicker() {
       <View className="relative mt-4">
         <Image
           source={
-            getItemValue('profile') ||
+            value ||
             'https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/12/Shakshuka-main-1.jpg'
           }
           contentFit="cover"
@@ -99,7 +103,6 @@ function ProfilePicker() {
           <PenIcon className="text-foreground" />
         </Pressable>
       </View>
-      <Text size="xl">{getItemValue('name')}</Text>
     </View>
   );
 }

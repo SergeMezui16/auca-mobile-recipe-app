@@ -18,9 +18,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:drawer): integrate swipeable item for list actions&#10;&#10;Replaced custom swipe-to-delete implementation with `react-native-swipeable-item`. Improved list rendering efficiency and modularized UI with better swipeable item handling. Updated dependencies to">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/swipe2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/swipe2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/recipes/recipe-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/recipes/recipe-card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -71,41 +72,41 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/app/(drawer)",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.android.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/prettier",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
-    "ts.external.directory.path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/hooks&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.android.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hooks" />
       <recent name="$PROJECT_DIR$/app/(drawer)" />
       <recent name="$PROJECT_DIR$/hooks/utils" />
       <recent name="$PROJECT_DIR$/components/icons" />
       <recent name="$PROJECT_DIR$/app/(tabs)" />
-      <recent name="$PROJECT_DIR$/assets/fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components" />
       <recent name="$PROJECT_DIR$/components/slide-to-left" />
       <recent name="$PROJECT_DIR$/app/(drawer)" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/(tabs)/recipes" />
-      <recent name="$PROJECT_DIR$/app/(tabs)" />
     </key>
   </component>
   <component name="RunManager">
@@ -155,7 +156,8 @@
       <workItem from="1742954413619" duration="58000" />
       <workItem from="1743368840566" duration="6692000" />
       <workItem from="1743454598766" duration="436000" />
-      <workItem from="1743455051748" duration="10279000" />
+      <workItem from="1743455051748" duration="11689000" />
+      <workItem from="1743467150514" duration="865000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -261,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743463739186</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat(app:drawer): integrate swipeable item for list actions&#10;&#10;Replaced custom swipe-to-delete implementation with `react-native-swipeable-item`. Improved list rendering efficiency and modularized UI with better swipeable item handling. Updated dependencies to include swipeable item support.">
+      <option name="closed" value="true" />
+      <created>1743465361270</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1743465361270</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +305,8 @@
     <MESSAGE value="feat(app:drawer): add new screens to drawer navigation" />
     <MESSAGE value="feat(app:drawer): add swipe-to-delete functionality&#10;&#10;Implement two new swipeable screens with delete functionality using `SlideToLeft`. Added animation handling with React Native Reanimated. Updated drawer layout and navigation structure to include the new screens." />
     <MESSAGE value="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency." />
+    <MESSAGE value="feat(app:drawer): integrate swipeable item for list actions&#10;&#10;Replaced custom swipe-to-delete implementation with `react-native-swipeable-item`. Improved list rendering efficiency and modularized UI with better swipeable item handling. Updated dependencies to" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(app:drawer): integrate swipeable item for list actions&#10;&#10;Replaced custom swipe-to-delete implementation with `react-native-swipeable-item`. Improved list rendering efficiency and modularized UI with better swipeable item handling. Updated dependencies to" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

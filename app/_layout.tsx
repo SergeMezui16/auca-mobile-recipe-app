@@ -1,4 +1,5 @@
 import '../global.css';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { PortalHost } from '@rn-primitives/portal';
 import { useFonts } from 'expo-font';
 import * as Notifications from 'expo-notifications';
@@ -67,16 +68,18 @@ export default function RootLayout({ children }: PropsWithChildren) {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <ThemeProvider>
-        <StatusBar style="auto" />
-        {children}
-        <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="signup" options={{ headerShown: false }} />
-          <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-        </Stack>
-        <PortalHost />
-      </ThemeProvider>
+      <BottomSheetModalProvider>
+        <ThemeProvider>
+          <StatusBar style="auto" />
+          {children}
+          <Stack>
+            <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="signup" options={{ headerShown: false }} />
+            <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+          </Stack>
+          <PortalHost />
+        </ThemeProvider>
+      </BottomSheetModalProvider>
     </GestureHandlerRootView>
   );
 }

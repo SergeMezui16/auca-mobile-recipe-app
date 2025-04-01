@@ -13,7 +13,6 @@ import { useEffect, useState } from 'react';
  */
 export const useContacts = (): Contacts.Contact[] => {
   const [contacts, setContacts] = useState<Contacts.Contact[]>([]);
-
   useEffect(() => {
     (async () => {
       const { status } = await Contacts.requestPermissionsAsync();

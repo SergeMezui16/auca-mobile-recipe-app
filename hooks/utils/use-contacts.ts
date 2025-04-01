@@ -24,6 +24,8 @@ export const useContacts = (): Contacts.Contact[] => {
             Contacts.Fields.Image,
             Contacts.Fields.Name,
             Contacts.Fields.Nickname,
+            Contacts.Fields.Birthday,
+            Contacts.Fields.JobTitle,
           ],
         });
 

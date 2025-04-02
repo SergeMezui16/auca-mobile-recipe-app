@@ -1,14 +1,23 @@
 import '../global.css';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { PortalHost } from '@rn-primitives/portal';
+import { drizzle } from 'drizzle-orm/expo-sqlite';
+import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
+import { useDrizzleStudio } from 'expo-drizzle-studio-plugin';
 import { useFonts } from 'expo-font';
 import * as Notifications from 'expo-notifications';
 import { router, SplashScreen, Stack } from 'expo-router';
+import { openDatabaseSync, SQLiteProvider } from 'expo-sqlite';
 import { StatusBar } from 'expo-status-bar';
-import React, { PropsWithChildren, useEffect } from 'react';
+import React, { PropsWithChildren, Suspense, useEffect } from 'react';
+import { ActivityIndicator, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { ThemeProvider } from '@/components/providers/theme-provider';
+import { Text } from '@/components/ui/text';
+import * as schema from '@/db/schema';
+import { DATABASE_NAME } from '@/db/schema';
+import migrations from '@/drizzle/migrations';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -49,7 +58,12 @@ function useNotificationObserver() {
   }, []);
 }
 
+const expoDB = openDatabaseSync(DATABASE_NAME, { enableChangeListener: true });
+const db = drizzle(expoDB, { schema });
+
 export default function RootLayout({ children }: PropsWithChildren) {
+  const result = useMigrations(db, migrations);
+  useDrizzleStudio(db);
   useNotificationObserver();
   const [loaded, error] = useFonts({
     rosarivo: require('@/assets/fonts/rosarivo/Rosarivo-Regular.ttf'),
@@ -66,20 +80,31 @@ export default function RootLayout({ children }: PropsWithChildren) {
     return null;
   }
 
+  if (result.error) {
+    return (
+      <View className="flex-1 items-center justify-center">
+        <Text>Error: {result.error.message}</Text>
+      </View>
+    );
+  }
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <BottomSheetModalProvider>
-        <ThemeProvider>
-          <StatusBar style="auto" />
-          {children}
-          <Stack>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="signup" options={{ headerShown: false }} />
-            <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-          </Stack>
-          <PortalHost />
-        </ThemeProvider>
-      </BottomSheetModalProvider>
+      <Suspense fallback={<ActivityIndicator size="large" />}>
+        <SQLiteProvider databaseName={DATABASE_NAME}>
+          <ThemeProvider>
+            <BottomSheetModalProvider>
+              <StatusBar style="auto" />
+              {children}
+              <Stack>
+                <Stack.Screen name="index" options={{ headerShown: false }} />
+                <Stack.Screen name="signup" options={{ headerShown: false }} />
+                <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+              </Stack>
+              <PortalHost />
+            </BottomSheetModalProvider>
+          </ThemeProvider>
+        </SQLiteProvider>
+      </Suspense>
     </GestureHandlerRootView>
   );
 }

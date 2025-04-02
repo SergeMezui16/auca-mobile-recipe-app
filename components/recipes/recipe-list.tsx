@@ -1,15 +1,21 @@
 import { FlashList } from '@shopify/flash-list';
+import { useLiveQuery } from 'drizzle-orm/expo-sqlite';
 import React from 'react';
 import { View } from 'react-native';
 
 import { RecipeCard } from './recipe-card';
 
+import { useRecipe } from '@/hooks/use-recipe';
+
 export const RecipeList = () => {
+  const { getAllRecipes } = useRecipe();
+  const { data: recipes } = useLiveQuery(getAllRecipes());
+
   return (
     <FlashList
-      data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+      data={recipes}
       ItemSeparatorComponent={() => <View className="h-6" />}
-      renderItem={({ item }) => <RecipeCard id={item} />}
+      renderItem={({ item }) => <RecipeCard recipe={item} />}
       estimatedItemSize={153}
     />
   );

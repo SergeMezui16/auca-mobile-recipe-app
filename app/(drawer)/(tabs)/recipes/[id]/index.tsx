@@ -1,4 +1,5 @@
 import { FlashList } from '@shopify/flash-list';
+import { useLiveQuery } from 'drizzle-orm/expo-sqlite';
 import { useLocalSearchParams } from 'expo-router';
 import { TimerIcon } from 'lucide-react-native';
 import React, { useState } from 'react';
@@ -23,19 +24,32 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Text } from '@/components/ui/text';
 import { Textarea } from '@/components/ui/textarea';
+import { useRecipe } from '@/hooks/use-recipe';
 
 export default function Recipe() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const { getRecipeById } = useRecipe();
+  const { data: recipe, error } = useLiveQuery(getRecipeById(Number(id)));
+
+  if (error) {
+    console.log(id);
+    alert(error.message);
+  }
+
+  if (!recipe) {
+    return (
+      <View className="flex-1 items-center justify-center">
+        <Text size="lg">Loading...</Text>
+      </View>
+    );
+  }
+
   return (
     <>
       <ScrollView>
         <SafeAreaView className="mx-4 mt-4 gap-4">
           <View className=" flex-row">
-            <Image
-              source="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/12/Shakshuka-main-1.jpg"
-              contentFit="cover"
-              className="h-[199px] flex-1 rounded-xl"
-            />
+            <Image source={recipe.uri} contentFit="cover" className="h-[199px] flex-1 rounded-xl" />
           </View>
           <View className="">
             <Text size="2xl">Recipe #{id}</Text>

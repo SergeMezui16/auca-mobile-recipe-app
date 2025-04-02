@@ -10,6 +10,7 @@ export const recipes = sqliteTable('recipes', {
   uri: text(),
   rate: integer().notNull(),
   duration: integer().notNull(),
+  published: integer({ mode: 'boolean' }).notNull().default(false),
   createdAt: integer({ mode: 'timestamp' }).notNull().default(new Date()),
   updatedAt: integer({ mode: 'timestamp' }).notNull().default(new Date()),
 });

@@ -8,6 +8,20 @@
       "when": 1743548486177,
       "tag": "0000_fair_doctor_doom",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1743589260705,
+      "tag": "0001_happy_tattoo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1743589802288,
+      "tag": "0002_confused_nicolaos",
+      "breakpoints": true
     }
   ]
 }

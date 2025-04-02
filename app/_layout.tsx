@@ -3,7 +3,6 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { PortalHost } from '@rn-primitives/portal';
 import { drizzle } from 'drizzle-orm/expo-sqlite';
 import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
-import { useDrizzleStudio } from 'expo-drizzle-studio-plugin';
 import { useFonts } from 'expo-font';
 import * as Notifications from 'expo-notifications';
 import { router, SplashScreen, Stack } from 'expo-router';
@@ -63,7 +62,6 @@ const db = drizzle(expoDB, { schema });
 
 export default function RootLayout({ children }: PropsWithChildren) {
   const result = useMigrations(db, migrations);
-  useDrizzleStudio(db);
   useNotificationObserver();
   const [loaded, error] = useFonts({
     rosarivo: require('@/assets/fonts/rosarivo/Rosarivo-Regular.ttf'),

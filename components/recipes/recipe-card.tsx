@@ -115,6 +115,15 @@ export const RecipeSheet = ({ recipe, close }: RecipeCardProps & { close: () => 
         className="mt-2 w-full">
         <Text>Cook Now</Text>
       </Button>
+      <Button
+        variant="secondary"
+        onPress={() => {
+          close();
+          router.push({ pathname: '(tabs)/recipes/[id]/edit', params: { id: recipe.id } });
+        }}
+        className="mt-2 w-full">
+        <Text>Edit</Text>
+      </Button>
     </SafeView>
   );
 };

@@ -1,10 +1,12 @@
 import { FlashList } from '@shopify/flash-list';
 import { useLiveQuery } from 'drizzle-orm/expo-sqlite';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { TimerIcon } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
 
+import { SafeView } from '@/components/blocks';
+import { BottomSheet, useBottomSheet } from '@/components/bottom-sheet';
 import { AuthorIcon, CommentIcon, StarIcon } from '@/components/icons';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -52,41 +54,36 @@ export default function Recipe() {
             <Image source={recipe.uri} contentFit="cover" className="h-[199px] flex-1 rounded-xl" />
           </View>
           <View className="">
-            <Text size="2xl">Recipe #{id}</Text>
+            <Text size="xl">{recipe.name}</Text>
             <Text size="md" className="text-muted-foreground">
-              Recipe description done with some ingredient, the recipe is easy to do but you might
-              have some cocking skills Recipe description done with some ingredient, the recipe is
-              easy to do but you might have some cocking skills
+              {recipe.description}
             </Text>
           </View>
           <View className="">
-            <View className="flex-row items-center justify-between">
+            <View className="flex-row items-center justify-end">
               <View className="flex-row items-center gap-2">
                 <AuthorIcon className="stroke-1 text-foreground" size={20} />
-                <Text size="lg">by John Doe</Text>
+                <Text size="lg">by Serge Mezui</Text>
               </View>
-              <Button size="sm">
-                <Text size="lg">Subscribe</Text>
-              </Button>
             </View>
           </View>
           <View className="flex-row justify-between gap-4">
             <View className="flex-row items-center justify-between gap-2">
               <TimerIcon className="stroke-1 text-primary" size={20} />
               <Text font="roboto" size="lg" className="lg text-muted-foreground">
-                5 minutes
+                {recipe.duration} minutes
               </Text>
             </View>
             <View className="flex-row items-center justify-between gap-2">
               <StarIcon className="stroke-1 text-primary" size={20} />
               <Text font="roboto" size="lg" className="lg text-muted-foreground">
-                4 stars
+                {recipe.rate} stars
               </Text>
             </View>
             <View className="flex-row items-center justify-between gap-2">
               <CommentIcon className="stroke-1 text-primary" size={20} />
               <Text font="roboto" size="lg" className="lg text-muted-foreground">
-                3 comments
+                {recipe.comments.length} comments
               </Text>
             </View>
           </View>
@@ -104,50 +101,55 @@ const BottomButtons = ({ id }: { id: string }) => {
     <>
       <View className="absolute bottom-2 right-3 w-full flex-1 flex-row justify-end gap-2">
         <AddComment />
-        <AddRate id={id} />
       </View>
     </>
   );
 };
 
 export const AddComment = () => {
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const { addComment } = useRecipe();
+  const { ref, open, close } = useBottomSheet();
+  const [comment, setComment] = useState<string>('');
+
+  const handleSubmit = async () => {
+    try {
+      if (!comment) return;
+      await addComment({ content: comment, recipeId: Number(id), author: 'Serge Mezui' });
+      router.push({ pathname: '(drawer)/(tabs)/recipes/[id]', params: { id: Number(id) } });
+      close();
+    } catch (error) {
+      alert('Error creating comment: ' + error);
+    }
+  };
+
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button>
-          <CommentIcon className="stroke-1 text-primary-foreground" size={20} />
-          <Text>Leave a comment</Text>
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>
-            <Text size="xl">Add your comment</Text>
-          </DialogTitle>
-          <DialogDescription>
-            <Text size="sm">Add a comment about this recipe.</Text>
-          </DialogDescription>
-        </DialogHeader>
-        <View className="w-full min-w-[300px]">
-          <Label>
-            <Text>Message</Text>
-          </Label>
-          <Textarea
-            className="font-[rosarivo]"
-            placeholderClassName="font-[rosarivo]"
-            placeholder="Write your comment..."
-            aria-labelledby="textareaLabel"
-          />
-        </View>
-        <DialogFooter>
-          <DialogClose asChild>
-            <Button>
-              <Text>Comment</Text>
-            </Button>
-          </DialogClose>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+    <View>
+      <Button onPress={() => open()}>
+        <CommentIcon className="stroke-1 text-primary-foreground" size={20} />
+        <Text>Leave a comment</Text>
+      </Button>
+      <BottomSheet ref={ref} title="Add comment" description="Add a comment about this recipe.">
+        <SafeView className="gap-4">
+          <View className="w-full min-w-[300px]">
+            <Label>
+              <Text>Message</Text>
+            </Label>
+            <Textarea
+              className="font-[rosarivo]"
+              placeholderClassName="font-[rosarivo]"
+              placeholder="Write your comment..."
+              aria-labelledby="textareaLabel"
+              defaultValue={comment}
+              onChangeText={(v) => setComment(v)}
+            />
+          </View>
+          <Button onPress={() => handleSubmit()}>
+            <Text>Comment</Text>
+          </Button>
+        </SafeView>
+      </BottomSheet>
+    </View>
   );
 };
 
@@ -192,6 +194,12 @@ export const AddRate = ({ id }: { id: string }) => {
 
 const RecipeTabs = () => {
   const [value, setValue] = useState('ingredients');
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const { getRecipeSteps, getRecipeIngredients, getRecipeComments } = useRecipe();
+  const { data: ingredients } = useLiveQuery(getRecipeIngredients(Number(id)));
+  const { data: steps } = useLiveQuery(getRecipeSteps(Number(id)));
+  const { data: comments } = useLiveQuery(getRecipeComments(Number(id)));
+
   return (
     <Tabs
       value={value}
@@ -209,52 +217,50 @@ const RecipeTabs = () => {
         </TabsTrigger>
       </TabsList>
 
-      <TabsContent value="ingredients">
+      <TabsContent value="ingredients" className="min-h-[500px]">
         <FlashList
-          data={[1, 2, 3, 4, 5, 6, 7]}
+          data={ingredients}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <View className="m-4 flex flex-row justify-between gap-2">
-              <Text size="lg">Ingredients #{item}</Text>
-              <Text font="roboto">{Math.ceil(Math.random() * 20)}</Text>
-            </View>
-          )}
-          estimatedItemSize={7}
-        />
-      </TabsContent>
-      <TabsContent value="steps">
-        <FlashList
-          data={[1, 2, 3, 4, 5]}
-          renderItem={() => (
-            <View className="m-4 flex gap-1">
-              <Text size="lg">John Doe</Text>
-              <Text className="text-muted-foreground">
-                Step content, do whatever you want, just do something good and tasty to eat....
+              <Text size="lg">
+                {item.name} ({item.unit})
               </Text>
+              <Text font="roboto">{item.quantity}</Text>
             </View>
           )}
-          estimatedItemSize={7}
+          estimatedItemSize={3}
         />
       </TabsContent>
-      <TabsContent value="comments">
+      <TabsContent value="steps" className="min-h-[500px]">
         <FlashList
-          data={[1, 2, 3, 4, 5]}
+          data={steps}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <View className="mt-4 flex flex-row items-center gap-2">
+              <View className="h-8 w-8 items-center justify-center rounded-full bg-secondary">
+                <Text className="">{item.position}</Text>
+              </View>
+              <Text className="text-muted-foreground">{item.description}</Text>
+            </View>
+          )}
+          estimatedItemSize={1}
+        />
+      </TabsContent>
+      <TabsContent value="comments" className="min-h-[500px]">
+        <FlashList
+          data={comments}
           renderItem={({ item }) => (
             <View className="m-4 flex-row items-center gap-4">
               <Avatar alt="Zach Nugent's Avatar">
-                <AvatarImage
-                  source={{
-                    uri: 'https://frequencefemme-back.ovh/wp-content/uploads/2023/01/linkedin-sales-solutions-kkjj-K22M-unsplash-5.png',
-                  }}
-                />
+                <AvatarImage />
                 <AvatarFallback>
-                  <Text>JD</Text>
+                  <Text>{item.author[0]}</Text>
                 </AvatarFallback>
               </Avatar>
               <View className="flex flex-col gap-1">
-                <Text size="lg">Step #{item}</Text>
-                <Text className="text-muted-foreground">
-                  Comment content, this recipe is so delicious...
-                </Text>
+                <Text size="lg">{item.author}</Text>
+                <Text className="text-muted-foreground">{item.content}</Text>
               </View>
             </View>
           )}

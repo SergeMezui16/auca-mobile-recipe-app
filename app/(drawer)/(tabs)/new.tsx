@@ -58,8 +58,7 @@ export default function New() {
         duration: recipe.duration,
       });
 
-      console.log(result);
-      router.replace({ pathname: '(tabs)/recipes/[id]', params: { id: result[0].id } });
+      router.replace({ pathname: '(tabs)/recipes/[id]/edit', params: { id: result[0].id } });
     } catch (error) {
       alert('Error creating recipe: ' + error);
     }

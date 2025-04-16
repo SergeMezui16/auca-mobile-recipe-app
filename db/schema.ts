@@ -66,6 +66,6 @@ export const commentsRelations = relations(comments, ({ one }) => ({
 }));
 
 export type Recipe = typeof recipes.$inferSelect;
-export type Ingredient = typeof ingredients;
-export type Step = typeof steps;
-export type Comment = typeof comments;
+export type Ingredient = typeof ingredients.$inferSelect;
+export type Step = typeof steps.$inferSelect;
+export type Comment = typeof comments.$inferSelect;

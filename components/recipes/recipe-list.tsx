@@ -8,8 +8,8 @@ import { RecipeCard } from './recipe-card';
 import { useRecipe } from '@/hooks/use-recipe';
 
 export const RecipeList = () => {
-  const { getAllRecipePublished, getAllRecipes } = useRecipe();
-  const { data: recipes } = useLiveQuery(getAllRecipePublished());
+  const { getAllRecipePublished } = useRecipe();
+  const { data: recipes } = useLiveQuery(getAllRecipePublished(), []);
 
   return (
     <FlashList

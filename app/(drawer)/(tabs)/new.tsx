@@ -58,6 +58,7 @@ export default function New() {
         duration: recipe.duration,
       });
 
+      setRecipe({ name: '', description: '', rate: 0, uri: null, duration: 0 });
       router.replace({ pathname: '(tabs)/recipes/[id]/edit', params: { id: result[0].id } });
     } catch (error) {
       alert('Error creating recipe: ' + error);

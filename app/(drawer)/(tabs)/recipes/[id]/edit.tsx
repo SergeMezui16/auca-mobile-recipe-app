@@ -1,12 +1,13 @@
-import { FlashList } from '@shopify/flash-list';
 import { useLiveQuery } from 'drizzle-orm/expo-sqlite';
 import * as ImagePicker from 'expo-image-picker';
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
+import Animated, { FadeIn, LinearTransition, SlideOutLeft } from 'react-native-reanimated';
 
 import { SafeView } from '@/components/blocks';
 import { BottomSheet, useBottomSheet } from '@/components/bottom-sheet';
+import { SlideToLeft } from '@/components/slide-to-left-1';
 import { Button } from '@/components/ui/button';
 import { Image } from '@/components/ui/image';
 import { Input } from '@/components/ui/input';
@@ -14,12 +15,13 @@ import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Text } from '@/components/ui/text';
 import { Textarea } from '@/components/ui/textarea';
+import { Ingredient, Step } from '@/db/schema';
 import { useRecipe } from '@/hooks/use-recipe';
 
 export default function EditRecipe() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { getRecipeById } = useRecipe();
-  const { data: recipe, error } = useLiveQuery(getRecipeById(Number(id)));
+  const { data: recipe, error } = useLiveQuery(getRecipeById(Number(id)), []);
 
   if (error) {
     console.log(id);
@@ -371,12 +373,66 @@ const AddStep = () => {
 };
 
 const RecipeTabs = () => {
+  const [update, setUpdate] = useState<number>(new Date().getTime());
   const [value, setValue] = useState('ingredients');
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { getRecipeSteps, getRecipeIngredients } = useRecipe();
-  const { data: ingredients } = useLiveQuery(getRecipeIngredients(Number(id)));
-  const { data: steps } = useLiveQuery(getRecipeSteps(Number(id)));
+  const { getRecipeSteps, getRecipeIngredients, deleteStep, deleteIngredient } = useRecipe();
+  const { data: ingredients } = useLiveQuery(getRecipeIngredients(Number(id)), [update]);
+  const { data: steps } = useLiveQuery(getRecipeSteps(Number(id)), [update]);
+  const ItemSeparatorComponent = () => {
+    return (
+      <View>
+        <View className=" my-2 w-full border border-border" />
+      </View>
+    );
+  };
 
+  const ingredientItem = ({ item, index }: { item: Ingredient; index: number }) => {
+    return (
+      <Animated.View
+        entering={FadeIn}
+        exiting={SlideOutLeft}
+        key={item.id}
+        layout={LinearTransition}>
+        {index !== 0 && <ItemSeparatorComponent />}
+        <SlideToLeft
+          onRightPress={async () => {
+            await deleteIngredient(item.id);
+            setUpdate(new Date().getTime());
+          }}>
+          <View className="m-4 flex flex-row justify-between gap-2">
+            <Text size="lg">
+              {item.name} ({item.unit})
+            </Text>
+            <Text font="roboto">{item.quantity}</Text>
+          </View>
+        </SlideToLeft>
+      </Animated.View>
+    );
+  };
+  const stepItem = ({ item, index }: { item: Step; index: number }) => {
+    return (
+      <Animated.View
+        entering={FadeIn}
+        exiting={SlideOutLeft}
+        key={item.id}
+        layout={LinearTransition}>
+        {index !== 0 && <ItemSeparatorComponent />}
+        <SlideToLeft
+          onRightPress={async () => {
+            await deleteStep(item.id);
+            setUpdate(new Date().getTime());
+          }}>
+          <View className="my-6 flex flex-row items-center gap-2">
+            <View className="h-8 w-8 items-center justify-center rounded-full bg-secondary">
+              <Text className="">{item.position}</Text>
+            </View>
+            <Text className="text-muted-foreground">{item.description}</Text>
+          </View>
+        </SlideToLeft>
+      </Animated.View>
+    );
+  };
   return (
     <Tabs
       value={value}
@@ -392,34 +448,14 @@ const RecipeTabs = () => {
       </TabsList>
 
       <TabsContent value="ingredients" className="h-[500px]">
-        <FlashList
-          data={ingredients}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <View className="m-4 flex flex-row justify-between gap-2">
-              <Text size="lg">
-                {item.name} ({item.unit})
-              </Text>
-              <Text font="roboto">{item.quantity}</Text>
-            </View>
-          )}
-          estimatedItemSize={3}
-        />
+        <Animated.View layout={LinearTransition}>
+          {ingredients.map((item, index) => ingredientItem({ item, index }))}
+        </Animated.View>
       </TabsContent>
       <TabsContent value="steps" className="h-[500px]">
-        <FlashList
-          data={steps}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <View className="mt-4 flex flex-row items-center gap-2">
-              <View className="h-8 w-8 items-center justify-center rounded-full bg-secondary">
-                <Text className="">{item.position}</Text>
-              </View>
-              <Text className="text-muted-foreground">{item.description}</Text>
-            </View>
-          )}
-          estimatedItemSize={1}
-        />
+        <Animated.View layout={LinearTransition}>
+          {steps.map((item, index) => stepItem({ item, index }))}
+        </Animated.View>
       </TabsContent>
     </Tabs>
   );

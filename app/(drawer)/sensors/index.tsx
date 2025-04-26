@@ -11,6 +11,9 @@ export default function Sensors() {
       <Link href={{ pathname: '(drawer)/sensors/pedometer' }}>
         <Text>Pedometer</Text>
       </Link>
+      <Link href={{ pathname: '(drawer)/sensors/shake' }}>
+        <Text>Accelerometer</Text>
+      </Link>
     </View>
   );
 }

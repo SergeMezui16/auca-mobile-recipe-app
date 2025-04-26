@@ -67,6 +67,15 @@ export default function Layout() {
         }}
       />
       <Drawer.Screen
+        name="sensors"
+        options={{
+          headerTitle: 'Sensors',
+          headerShown: true,
+          drawerLabel: ({ focused }) => <DrawerLabel title="Sensors" focused={focused} />,
+          drawerIcon: (props) => <DrawerIcon {...props} icon={MapIcon} />,
+        }}
+      />
+      <Drawer.Screen
         name="swipe1"
         options={{
           headerTitle: 'Swipe 1',

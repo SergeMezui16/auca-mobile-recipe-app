@@ -19,3 +19,4 @@ export * from './battery';
 export * from './bluetooth';
 export * from './contact';
 export * from './todo';
+export * from './map';

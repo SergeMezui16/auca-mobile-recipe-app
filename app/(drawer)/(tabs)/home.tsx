@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 
 import { SafeView } from '@/components/blocks';
@@ -28,6 +28,7 @@ const Recipes = () => {
   );
 };
 const Welcome = () => {
+  const [data, setDate] = useState();
   return (
     <SafeView className="gap-2 rounded border border-primary bg-primary/10">
       <Text size="xl">Mbolwani.</Text>
@@ -35,7 +36,23 @@ const Welcome = () => {
         Recipe Hub, create and share recipe with everybody around the world.
       </Text>
       <View className="flex flex-row gap-4">
-        <Button variant="outline">
+        <Button
+          onPress={async () => {
+            const res = await fetch('https://test.sergemezui.dev/', {
+              body: JSON.stringify({
+                identifier: 'UYTRERTYUIOP',
+                longitude: 23456789,
+                latitude: 23456789,
+                description: 'ERTYUIOP',
+                date: new Date().toISOString(),
+              }),
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+            });
+
+            console.log(res.status);
+          }}
+          variant="outline">
           <ShuffleIcon size={14} className="stroke-1 text-foreground" />
           <Text>Shuffle recipe</Text>
         </Button>

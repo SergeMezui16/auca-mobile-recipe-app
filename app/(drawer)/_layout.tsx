@@ -4,7 +4,7 @@ import { LucideIcon } from 'lucide-react-native';
 import React from 'react';
 import { View } from 'react-native';
 
-import { ContactIcon, HomeIcon, TodoIcon } from '@/components/icons';
+import { ContactIcon, HomeIcon, MapIcon, TodoIcon } from '@/components/icons';
 import { PenIcon } from '@/components/icons/pen';
 import { Image } from '@/components/ui/image';
 import { Text } from '@/components/ui/text';
@@ -55,6 +55,15 @@ export default function Layout() {
           headerShown: true,
           drawerLabel: ({ focused }) => <DrawerLabel title="Preferences" focused={focused} />,
           drawerIcon: (props) => <DrawerIcon {...props} icon={PenIcon} />,
+        }}
+      />
+      <Drawer.Screen
+        name="map"
+        options={{
+          headerTitle: 'Map',
+          headerShown: true,
+          drawerLabel: ({ focused }) => <DrawerLabel title="Map" focused={focused} />,
+          drawerIcon: (props) => <DrawerIcon {...props} icon={MapIcon} />,
         }}
       />
       <Drawer.Screen

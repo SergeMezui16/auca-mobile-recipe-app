@@ -18,12 +18,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(recipes): enhance recipe editing and database schema&#10;&#10;Added editing capabilities for recipes, ingredients, and steps, including a publish feature. Updated SQLite schemas to include a new `published` column in the `recipes` table and adjusted default timestamps.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(recipes): enhance recipe editing and data handling&#10;&#10;Added swipe-to-delete functionality for recipe ingredients and steps with animations using Reanimated. Improved LiveQuery dependencies for reactivity and ensured consistency in type inference for database schema. Refactored components for better modularity and UI updates.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/new.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/new.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/recipes/[id]/edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/recipes/[id]/edit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/recipes/recipe-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/recipes/recipe-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/icons/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/icons/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,33 +75,36 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.android.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "/home/sergemezui/.local/share/JetBrains/PhpStorm2024.3/Shell Script/shellcheck",
+    "ToolWindow.GitHub Copilot Chat.ShowToolbar": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.android.executor": "Run",
+    "npm.start.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
+    "ts.external.directory.path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/components/icons" />
-      <recent name="$PROJECT_DIR$/hooks" />
       <recent name="$PROJECT_DIR$/app/(drawer)" />
+      <recent name="$PROJECT_DIR$/hooks" />
       <recent name="$PROJECT_DIR$/hooks/utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -109,7 +115,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration name="android" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -120,8 +126,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.android" />
       </list>
     </recent_temporary>
@@ -129,8 +146,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PS-243.26053.13" />
-        <option value="bundled-php-predefined-a98d8de5180a-1ec7b7818973-com.jetbrains.php.sharedIndexes-PS-243.26053.13" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.436" />
+        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.436" />
       </set>
     </attachedChunks>
   </component>
@@ -160,7 +177,16 @@
       <workItem from="1743467150514" duration="7214000" />
       <workItem from="1743532020759" duration="602000" />
       <workItem from="1743547587267" duration="25685000" />
-      <workItem from="1744816811607" duration="2454000" />
+      <workItem from="1744816811607" duration="4460000" />
+      <workItem from="1744841127370" duration="8086000" />
+      <workItem from="1744889209270" duration="2059000" />
+      <workItem from="1744893706783" duration="6570000" />
+      <workItem from="1745354574886" duration="1414000" />
+      <workItem from="1745356094125" duration="6945000" />
+      <workItem from="1745368952183" duration="109000" />
+      <workItem from="1745369074154" duration="2861000" />
+      <workItem from="1745662605928" duration="209000" />
+      <workItem from="1745666963810" duration="2679000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -330,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743597945227</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat(recipes): enhance recipe editing and data handling&#10;&#10;Added swipe-to-delete functionality for recipe ingredients and steps with animations using Reanimated. Improved LiveQuery dependencies for reactivity and ensured consistency in type inference for database schema. Refactored components for better modularity and UI updates.">
+      <option name="closed" value="true" />
+      <created>1744830766465</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1744830766465</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +405,8 @@
     <MESSAGE value="feat(db): add database schema for recipes application&#10;&#10;Introduce SQLite schema defining tables for recipes, ingredients, steps, and comments. This lays the foundation for managing recipe-related data in a structured manner." />
     <MESSAGE value="feat(project:drizzle): implement SQLite database schema and migrations&#10;&#10;Added initial SQLite schema with recipes, ingredients, steps, and comments, along with relations. Integrated database migrations and updated the recipe components to use dynamic data from the SQLite database. Also configured Drizzle and related dependencies for migration/ORM support." />
     <MESSAGE value="feat(recipes): enhance recipe editing and database schema&#10;&#10;Added editing capabilities for recipes, ingredients, and steps, including a publish feature. Updated SQLite schemas to include a new `published` column in the `recipes` table and adjusted default timestamps." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(recipes): enhance recipe editing and database schema&#10;&#10;Added editing capabilities for recipes, ingredients, and steps, including a publish feature. Updated SQLite schemas to include a new `published` column in the `recipes` table and adjusted default timestamps." />
+    <MESSAGE value="feat(recipes): enhance recipe editing and data handling&#10;&#10;Added swipe-to-delete functionality for recipe ingredients and steps with animations using Reanimated. Improved LiveQuery dependencies for reactivity and ensured consistency in type inference for database schema. Refactored components for better modularity and UI updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(recipes): enhance recipe editing and data handling&#10;&#10;Added swipe-to-delete functionality for recipe ingredients and steps with animations using Reanimated. Improved LiveQuery dependencies for reactivity and ensured consistency in type inference for database schema. Refactored components for better modularity and UI updates." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
 
 export default function SensorsLayout() {
-  return <Stack />;
+  return <Stack screenOptions={{ headerShown: false }} />;
 }

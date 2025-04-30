@@ -5,6 +5,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { ContactIcon, HomeIcon, MapIcon, TodoIcon } from '@/components/icons';
+import { GaugeIcon } from '@/components/icons/gauge';
 import { PenIcon } from '@/components/icons/pen';
 import { Image } from '@/components/ui/image';
 import { Text } from '@/components/ui/text';
@@ -72,7 +73,7 @@ export default function Layout() {
           headerTitle: 'Sensors',
           headerShown: true,
           drawerLabel: ({ focused }) => <DrawerLabel title="Sensors" focused={focused} />,
-          drawerIcon: (props) => <DrawerIcon {...props} icon={MapIcon} />,
+          drawerIcon: (props) => <DrawerIcon {...props} icon={GaugeIcon} />,
         }}
       />
       <Drawer.Screen

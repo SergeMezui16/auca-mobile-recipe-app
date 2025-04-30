@@ -1,19 +1,23 @@
 import { Link } from 'expo-router';
-import { View } from 'react-native';
+import { Button } from 'react-native';
 
-import { Text } from '@/components/ui/text';
+import { SafeView } from '@/components/blocks';
 
 export default function Sensors() {
   return (
-    <View>
-      <Text>Pedometer</Text>
-      <Text>Pedometer</Text>
-      <Link href={{ pathname: '(drawer)/sensors/pedometer' }}>
-        <Text>Pedometer</Text>
+    <SafeView className="flex-1 justify-center gap-4">
+      <Link asChild href={{ pathname: '(drawer)/sensors/pedometer' }}>
+        <Button title="Pedometer" />
       </Link>
-      <Link href={{ pathname: '(drawer)/sensors/shake' }}>
-        <Text>Accelerometer</Text>
+      <Link asChild href={{ pathname: '(drawer)/sensors/shake' }}>
+        <Button title="Accelerometer" />
       </Link>
-    </View>
+      <Link asChild href={{ pathname: '(drawer)/sensors/light' }}>
+        <Button title="Light Sensor" />
+      </Link>
+      <Link asChild href={{ pathname: '(drawer)/sensors/gyroscope' }}>
+        <Button title="Gyroscope" />
+      </Link>
+    </SafeView>
   );
 }

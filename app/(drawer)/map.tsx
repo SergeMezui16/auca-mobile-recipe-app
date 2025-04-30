@@ -44,14 +44,15 @@ TaskManager.defineTask(GEOFENCING_TASK, async ({ data, error }) => {
       },
       trigger: null,
     });
-
+    const date = new Date();
+    date.setHours(date.getHours() + 2);
     await fetch('https://test.sergemezui.dev/', {
       body: JSON.stringify({
         identifier: region.identifier,
         longitude: region.longitude,
         latitude: region.latitude,
         description: message,
-        date: new Date().toISOString(),
+        date: date.toISOString(),
       }),
       method: 'POST',
       headers: { 'content-type': 'application/json' },

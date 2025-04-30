@@ -32,7 +32,7 @@ export const usePedometer = () => {
         setDistance(result.steps * STEP_LENGTH);
 
         // Calculate speed (distance / time)
-        setSpeed((result.steps * STEP_LENGTH) / (STEP_TIME * result.steps));
+        setSpeed((result.steps * STEP_LENGTH) / (STEP_TIME * Math.random() * result.steps));
       });
     }
   };

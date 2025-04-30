@@ -18,9 +18,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(app:permissions): add location, motion, and audio support&#10;&#10;Integrated permissions for location, motion, and microphone access, and added support for Google Maps via API key. Updated the home screen with API call functionality to fetch data. Exported the map icon component for use in the UI.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(sensors): add shake detection with notification support&#10;&#10;Introduced a new screen for detecting device shakes using the accelerometer. It sends a notification when a shake is detected and adds a corresponding link in the sensors index for navigation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/pedometer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/pedometer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/shake.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/shake.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/utils/use-pedometer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/utils/use-pedometer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +84,7 @@
     "SHELLCHECK.PATH": "/home/sergemezui/.local/share/JetBrains/PhpStorm2024.3/Shell Script/shellcheck",
     "ToolWindow.GitHub Copilot Chat.ShowToolbar": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app",
+    "last_opened_file_path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/components/icons",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,8 +108,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/components/icons" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/(drawer)" />
       <recent name="$PROJECT_DIR$/hooks" />
       <recent name="$PROJECT_DIR$/hooks/utils" />
@@ -145,8 +153,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.436" />
-        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.436" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.466" />
+        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.466" />
       </set>
     </attachedChunks>
   </component>
@@ -186,7 +194,10 @@
       <workItem from="1745369074154" duration="2861000" />
       <workItem from="1745662605928" duration="209000" />
       <workItem from="1745666963810" duration="2679000" />
-      <workItem from="1745673497104" duration="4559000" />
+      <workItem from="1745673497104" duration="7679000" />
+      <workItem from="1745681465800" duration="798000" />
+      <workItem from="1746011225580" duration="645000" />
+      <workItem from="1746012140590" duration="5538000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -396,7 +407,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745673790682</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat(app:sensors): introduce pedometer screen and utilities&#10;&#10;Added a new Sensors screen with a Pedometer feature for step tracking, distance, and speed calculations. Implemented a custom `usePedometer` hook for managing pedometer data and permissions. Updated drawer navigation to include the new Sensors section.">
+      <option name="closed" value="true" />
+      <created>1745678085656</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1745678085656</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat(sensors): add shake detection with notification support&#10;&#10;Introduced a new screen for detecting device shakes using the accelerometer. It sends a notification when a shake is detected and adds a corresponding link in the sensors index for navigation.">
+      <option name="closed" value="true" />
+      <created>1745679781912</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1745679781913</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,8 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(theme): implement dynamic theming with toggle support&#10;&#10;Add a `ThemeProvider` for managing light and dark themes using `nativewind`. Introduce reusable `Button` and `Text` components, alongside a `ThemeToggle` for switching themes. Updated TailwindCSS configuration and project dependencies to support theming." />
-    <MESSAGE value="refactor(ui): restructure components and tweak theming&#10;&#10;Refactored UI components, reorganizing button and text logic. Updated theme toggle and global styles to streamline theming consistency. Added support for Roboto and Rosarivo fonts with Expo configuration updates." />
     <MESSAGE value="feat(app:tabs): implement new tab navigation and UI updates&#10;&#10;Introduced a new tab-based navigation system with refactored layout, screens, and components. Updated theme colors, icons, and added a recipe list with a dynamic UI. Integrated new dependencies, including `expo-image` and `flash-list`, for enhanced UI performance." />
     <MESSAGE value="feat(app:tabs): add recipe components and update tabs&#10;&#10;Implemented `RecipeCard` and `RecipeList` components for recipe management. Refactored `index.tsx` and `search.tsx` to integrate these components with improved UI. Added a reusable `Input` component for the search functionality." />
     <MESSAGE value="feat(app:ui): implement recipes and global tab components&#10;&#10;Added new recipe navigation, custom components including Alert, Dialog, Tabs, Avatar, and Textarea. Organized app structure with revamped layouts, portals, and gesture handlers for better user experience. Introduced dependencies like `@rn-primitives` and `@shopify/flash-list` to enhance functionality." />
@@ -439,7 +464,9 @@
     <MESSAGE value="feat(drawer): add Map screen and update drawer navigation&#10;&#10;Introduced a new &quot;Map&quot; screen with its corresponding icon and drawer label. Updated the drawer navigation to include configuration for the Map screen. Adjusted .gitignore to include .env.* files and fixed newline handling." />
     <MESSAGE value="feat(project:dependencies): add new packages for geofencing and mapping&#10;&#10;Added `@rn-bridge/react-native-geofencing`, `react-native-maps`, and several `expo` utilities for new features. These enhancements support geofencing, mapping, and sensor functionalities, boosting the app's capability for location-based and interactive features." />
     <MESSAGE value="feat(app:permissions): add location, motion, and audio support&#10;&#10;Integrated permissions for location, motion, and microphone access, and added support for Google Maps via API key. Updated the home screen with API call functionality to fetch data. Exported the map icon component for use in the UI." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(app:permissions): add location, motion, and audio support&#10;&#10;Integrated permissions for location, motion, and microphone access, and added support for Google Maps via API key. Updated the home screen with API call functionality to fetch data. Exported the map icon component for use in the UI." />
+    <MESSAGE value="feat(app:sensors): introduce pedometer screen and utilities&#10;&#10;Added a new Sensors screen with a Pedometer feature for step tracking, distance, and speed calculations. Implemented a custom `usePedometer` hook for managing pedometer data and permissions. Updated drawer navigation to include the new Sensors section." />
+    <MESSAGE value="feat(sensors): add shake detection with notification support&#10;&#10;Introduced a new screen for detecting device shakes using the accelerometer. It sends a notification when a shake is detected and adds a corresponding link in the sensors index for navigation." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(sensors): add shake detection with notification support&#10;&#10;Introduced a new screen for detecting device shakes using the accelerometer. It sends a notification when a shake is detected and adds a corresponding link in the sensors index for navigation." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

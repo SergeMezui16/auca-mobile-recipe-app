@@ -3,7 +3,7 @@ import { Pedometer } from 'expo-sensors';
 import { useEffect, useState } from 'react';
 
 const STEP_LENGTH = 0.78; // Average step length in meters (adjust as needed)
-const STEP_TIME = 1; // Average time per step in seconds (adjust as needed)
+const STEP_TIME = 0.5; // Average time per step in seconds (adjust as needed)
 
 export const usePedometer = () => {
   const [isPedometerAvailable, setIsPedometerAvailable] = useState('checking');
@@ -32,7 +32,7 @@ export const usePedometer = () => {
         setDistance(result.steps * STEP_LENGTH);
 
         // Calculate speed (distance / time)
-        setSpeed((result.steps * STEP_LENGTH) / STEP_TIME);
+        setSpeed((result.steps * STEP_LENGTH) / (STEP_TIME * result.steps));
       });
     }
   };

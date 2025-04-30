@@ -1,7 +1,8 @@
 import * as Notifications from 'expo-notifications';
+import { Link } from 'expo-router';
 import { Accelerometer } from 'expo-sensors';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function ShakeNotificationScreen() {
   const [shakeDetected, setShakeDetected] = useState(false);
@@ -40,7 +41,10 @@ export default function ShakeNotificationScreen() {
 
   return (
     <View style={styles.container}>
-      <Text>Shake your device to trigger a notification!</Text>
+      <Text style={styles.text}>Shake your device to trigger a notification! 👋🏾🥳</Text>
+      <Link asChild href={{ pathname: '(drawer)/sensors' }}>
+        <Button title="Back" />
+      </Link>
     </View>
   );
 }
@@ -49,7 +53,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
+    textAlign: 'center',
+    gap: '10px',
     paddingHorizontal: 10,
+  },
+  text: {
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: 'center',
   },
 });

@@ -18,11 +18,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="fix(map): adjust date handling in API request&#10;&#10;Updated the date logic to set a 2-hour offset before sending it in the API request. This ensures accurate time representation for the backend.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(hooks): add password support to use-preferences&#10;&#10;Extended the Preferences type to include a password field. This change ensures the hook can manage password-related entries seamlessly.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/gyroscope.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/gyroscope.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/light.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/light.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/preferences.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/preferences.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/recipes/recipe-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/recipes/recipe-list.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +197,7 @@
       <workItem from="1745681465800" duration="798000" />
       <workItem from="1746011225580" duration="645000" />
       <workItem from="1746012140590" duration="12126000" />
-      <workItem from="1747129329514" duration="754000" />
+      <workItem from="1747129329514" duration="10496000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -483,7 +487,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746020848204</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="feat(app:sensors): enhance light and gyroscope sensor screens&#10;&#10;Renamed the Light sensor screen for consistency and improved its functionality with animations and UI updates. Adjusted gyroscope screen styles and text for better clarity and presentation. Minor improvements include seeking notifications permission on startup and removing redundant console logs.">
+      <option name="closed" value="true" />
+      <created>1747132457250</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1747132457250</updated>
+    </task>
+    <task id="LOCAL-00038" summary="feat(hooks): add password support to use-preferences&#10;&#10;Extended the Preferences type to include a password field. This change ensures the hook can manage password-related entries seamlessly.">
+      <option name="closed" value="true" />
+      <created>1747139714469</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1747139714469</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,8 +521,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(app:drawer): add swipe-to-delete functionality&#10;&#10;Implement two new swipeable screens with delete functionality using `SlideToLeft`. Added animation handling with React Native Reanimated. Updated drawer layout and navigation structure to include the new screens." />
-    <MESSAGE value="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency." />
     <MESSAGE value="feat(app:drawer): integrate swipeable item for list actions&#10;&#10;Replaced custom swipe-to-delete implementation with `react-native-swipeable-item`. Improved list rendering efficiency and modularized UI with better swipeable item handling. Updated dependencies to" />
     <MESSAGE value="feat(components:bottom-sheet): integrate reusable bottom sheet&#10;&#10;Added a reusable `BottomSheet` component using `@gorhom/bottom-sheet` to enhance UI/UX for modal interactions. Updated `RecipeCard` to incorporate long-press to show recipe details via the bottom sheet. Wrapped the app's layout with `BottomSheetModalProvider` and updated dependencies in the project." />
     <MESSAGE value="feat(app:contacts): enhance contact item with bottom sheet&#10;&#10;Integrated a reusable bottom sheet for contact details display. Added support for long-press to show contact details and improved call handling logic. Updated the contacts hook to fetch additional contact fields like birthday and job title." />
@@ -526,7 +544,9 @@
     <MESSAGE value="feat(app:sensors): enhance pedometer and add shake detection&#10;&#10;Updated the Pedometer screen with a revamped layout and `ListBlock` components for improved readability. Adjusted speed calculation logic in the `usePedometer` hook for accuracy. Introduced a new &quot;Shake Detection&quot; screen with notifications support and navigation enhancements." />
     <MESSAGE value="fix(hooks:use-pedometer): correct speed calculation logic&#10;&#10;Updated the speed calculation to fix improper logic by replacing a redundant factor with a randomized value. This ensures a more realistic and varied speed computation." />
     <MESSAGE value="fix(map): adjust date handling in API request&#10;&#10;Updated the date logic to set a 2-hour offset before sending it in the API request. This ensures accurate time representation for the backend." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(map): adjust date handling in API request&#10;&#10;Updated the date logic to set a 2-hour offset before sending it in the API request. This ensures accurate time representation for the backend." />
+    <MESSAGE value="feat(app:sensors): enhance light and gyroscope sensor screens&#10;&#10;Renamed the Light sensor screen for consistency and improved its functionality with animations and UI updates. Adjusted gyroscope screen styles and text for better clarity and presentation. Minor improvements include seeking notifications permission on startup and removing redundant console logs." />
+    <MESSAGE value="feat(hooks): add password support to use-preferences&#10;&#10;Extended the Preferences type to include a password field. This change ensures the hook can manage password-related entries seamlessly." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(hooks): add password support to use-preferences&#10;&#10;Extended the Preferences type to include a password field. This change ensures the hook can manage password-related entries seamlessly." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

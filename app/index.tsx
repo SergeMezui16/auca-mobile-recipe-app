@@ -8,10 +8,33 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Text } from '@/components/ui/text';
+import { getItemValue } from '@/hooks/utils/use-preferences';
 
 export default function Index() {
   const router = useRouter();
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = () => {
+    console.log('Email:', email + '->' + getItemValue('email'));
+    console.log('Password:', password + '->' + getItemValue('password'));
+
+    if (!email || !password) {
+      setError('Please fill all the required fields. Email and Password are required.');
+      return;
+    }
+
+    // Simulate a login process
+    if (getItemValue('email') !== email || getItemValue('password') !== password) {
+      setError('Invalid email or password');
+      return;
+    }
+
+    router.replace({ pathname: '/home' });
+  };
+
   return (
     <>
       <SafeView className="flex-1 items-center justify-center gap-10">
@@ -29,16 +52,22 @@ export default function Index() {
                 <Text size="lg">Email</Text>
               </Label>
               <Input
+                value={email}
+                onChangeText={(e) => setEmail(e)}
                 placeholderClassName="font-[rosarivo]"
                 aria-labelledby="textareaLabel"
                 keyboardType="email-address"
+                className={error ? 'border-red-500' : ''}
               />
+              {error && <Text className="text-red-500">{error}</Text>}
             </View>
             <View className="w-full">
               <Label>
                 <Text size="lg">Password</Text>
               </Label>
               <Input
+                value={password}
+                onChangeText={(e) => setPassword(e)}
                 placeholderClassName="font-[rosarivo]"
                 aria-labelledby="textareaLabel"
                 textContentType="password"
@@ -53,7 +82,7 @@ export default function Index() {
             </View>
           </View>
           <View className="items-center gap-4">
-            <Button onPress={() => router.replace({ pathname: '(tabs)/home' })} className="w-full">
+            <Button onPress={() => handleSubmit()} className="w-full">
               <Text>Login</Text>
             </Button>
             <View className="items-center gap-2">

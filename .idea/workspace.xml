@@ -18,15 +18,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(hooks): add password support to use-preferences&#10;&#10;Extended the Preferences type to include a password field. This change ensures the hook can manage password-related entries seamlessly.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(auth): add email/password validation to login screen&#10;&#10;Implemented email and password state management with validation logic for the login screen. Enhanced user feedback with error messages for missing or invalid credentials. Updated navigation flow to redirect to the home screen upon successful login.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/(tabs)/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/(tabs)/settings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/preferences.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/preferences.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/recipes/recipe-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/recipes/recipe-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +191,7 @@
       <workItem from="1745681465800" duration="798000" />
       <workItem from="1746011225580" duration="645000" />
       <workItem from="1746012140590" duration="12126000" />
-      <workItem from="1747129329514" duration="10496000" />
+      <workItem from="1747129329514" duration="12197000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -503,7 +497,63 @@
       <option name="project" value="LOCAL" />
       <updated>1747139714469</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="refactor(home): update &quot;Create my recipe&quot; to use Link&#10;&#10;Replaced the &quot;Create my recipe&quot; button with a Link component for improved routing. Removed unused Shuffle button and its associated implementation for a cleaner UI and codebase.">
+      <option name="closed" value="true" />
+      <created>1747150480838</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1747150480838</updated>
+    </task>
+    <task id="LOCAL-00040" summary="feat(signup): add form state management and submission logic&#10;&#10;Enhances the signup form by introducing state handling for username, email, and password fields. Implements a `handleSubmit` function to persist user details and redirect upon registration. Adjusts UI components for dynamic input changes and updates navigation logic.">
+      <option name="closed" value="true" />
+      <created>1747150488752</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1747150488752</updated>
+    </task>
+    <task id="LOCAL-00041" summary="feat(settings): enhance settings tab with profile and theme options&#10;&#10;Added new components for editing profile picture, username, and app theme directly within the settings tab. Also included logout and contact options, as well as footer information. Improved overall user experience with streamlined and interactive UI.">
+      <option name="closed" value="true" />
+      <created>1747150496721</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1747150496722</updated>
+    </task>
+    <task id="LOCAL-00042" summary="feat(search): add live search with filtered recipes list  &#10;&#10;Implemented a live search feature that filters recipes based on user input. Replaced `RecipeList` with `FlashList` for optimized rendering of the filtered recipe cards using `useLiveQuery` and `useRecipe` hooks. Improved user experience by making the search dynamic and responsive.  &#10;```">
+      <option name="closed" value="true" />
+      <created>1747150507238</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1747150507238</updated>
+    </task>
+    <task id="LOCAL-00043" summary="fix(recipes): update dependency array in useLiveQuery&#10;&#10;Include current date in the dependency array of useLiveQuery to ensure it re-runs correctly. This fixes potential stale data issues in the RecipeList component.">
+      <option name="closed" value="true" />
+      <created>1747150519002</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1747150519002</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refactor(preferences): update ProfilePicker styling and export&#10;&#10;Wrapped ProfilePicker in an additional styled View in preferences.tsx to adjust layout and spacing. Changed ProfilePicker to be exported for potential reuse elsewhere. Cleaned up redundant styling within the ProfilePicker component for better maintainability.">
+      <option name="closed" value="true" />
+      <created>1747150526832</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1747150526832</updated>
+    </task>
+    <task id="LOCAL-00045" summary="feat(auth): add email/password validation to login screen&#10;&#10;Implemented email and password state management with validation logic for the login screen. Enhanced user feedback with error messages for missing or invalid credentials. Updated navigation flow to redirect to the home screen upon successful login.">
+      <option name="closed" value="true" />
+      <created>1747150588843</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1747150588843</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,13 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(app:drawer): integrate swipeable item for list actions&#10;&#10;Replaced custom swipe-to-delete implementation with `react-native-swipeable-item`. Improved list rendering efficiency and modularized UI with better swipeable item handling. Updated dependencies to" />
-    <MESSAGE value="feat(components:bottom-sheet): integrate reusable bottom sheet&#10;&#10;Added a reusable `BottomSheet` component using `@gorhom/bottom-sheet` to enhance UI/UX for modal interactions. Updated `RecipeCard` to incorporate long-press to show recipe details via the bottom sheet. Wrapped the app's layout with `BottomSheetModalProvider` and updated dependencies in the project." />
-    <MESSAGE value="feat(app:contacts): enhance contact item with bottom sheet&#10;&#10;Integrated a reusable bottom sheet for contact details display. Added support for long-press to show contact details and improved call handling logic. Updated the contacts hook to fetch additional contact fields like birthday and job title." />
-    <MESSAGE value="feat(app:drawer): improve swipeable list with trash icon&#10;&#10;Replaced placeholder data with static dataset and updated list styling. Enhanced swipeable actions by adding Trash icon for delete functionality. Refactored underlays and separators for better modularity and UI consistency." />
-    <MESSAGE value="feat(db): add database schema for recipes application&#10;&#10;Introduce SQLite schema defining tables for recipes, ingredients, steps, and comments. This lays the foundation for managing recipe-related data in a structured manner." />
-    <MESSAGE value="feat(project:drizzle): implement SQLite database schema and migrations&#10;&#10;Added initial SQLite schema with recipes, ingredients, steps, and comments, along with relations. Integrated database migrations and updated the recipe components to use dynamic data from the SQLite database. Also configured Drizzle and related dependencies for migration/ORM support." />
-    <MESSAGE value="feat(recipes): enhance recipe editing and database schema&#10;&#10;Added editing capabilities for recipes, ingredients, and steps, including a publish feature. Updated SQLite schemas to include a new `published` column in the `recipes` table and adjusted default timestamps." />
     <MESSAGE value="feat(recipes): enhance recipe editing and data handling&#10;&#10;Added swipe-to-delete functionality for recipe ingredients and steps with animations using Reanimated. Improved LiveQuery dependencies for reactivity and ensured consistency in type inference for database schema. Refactored components for better modularity and UI updates." />
     <MESSAGE value="feat(map): add geofencing with map and location tracking&#10;&#10;Introduce a map view with geofencing capabilities using Google Maps. Implement region-based alerts and notifications for entering/exiting predefined areas. Added a custom hook for handling user location and permissions." />
     <MESSAGE value="feat(drawer): add Map screen and update drawer navigation&#10;&#10;Introduced a new &quot;Map&quot; screen with its corresponding icon and drawer label. Updated the drawer navigation to include configuration for the Map screen. Adjusted .gitignore to include .env.* files and fixed newline handling." />
@@ -546,7 +589,14 @@
     <MESSAGE value="fix(map): adjust date handling in API request&#10;&#10;Updated the date logic to set a 2-hour offset before sending it in the API request. This ensures accurate time representation for the backend." />
     <MESSAGE value="feat(app:sensors): enhance light and gyroscope sensor screens&#10;&#10;Renamed the Light sensor screen for consistency and improved its functionality with animations and UI updates. Adjusted gyroscope screen styles and text for better clarity and presentation. Minor improvements include seeking notifications permission on startup and removing redundant console logs." />
     <MESSAGE value="feat(hooks): add password support to use-preferences&#10;&#10;Extended the Preferences type to include a password field. This change ensures the hook can manage password-related entries seamlessly." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(hooks): add password support to use-preferences&#10;&#10;Extended the Preferences type to include a password field. This change ensures the hook can manage password-related entries seamlessly." />
+    <MESSAGE value="refactor(home): update &quot;Create my recipe&quot; to use Link&#10;&#10;Replaced the &quot;Create my recipe&quot; button with a Link component for improved routing. Removed unused Shuffle button and its associated implementation for a cleaner UI and codebase." />
+    <MESSAGE value="feat(signup): add form state management and submission logic&#10;&#10;Enhances the signup form by introducing state handling for username, email, and password fields. Implements a `handleSubmit` function to persist user details and redirect upon registration. Adjusts UI components for dynamic input changes and updates navigation logic." />
+    <MESSAGE value="feat(settings): enhance settings tab with profile and theme options&#10;&#10;Added new components for editing profile picture, username, and app theme directly within the settings tab. Also included logout and contact options, as well as footer information. Improved overall user experience with streamlined and interactive UI." />
+    <MESSAGE value="feat(search): add live search with filtered recipes list  &#10;&#10;Implemented a live search feature that filters recipes based on user input. Replaced `RecipeList` with `FlashList` for optimized rendering of the filtered recipe cards using `useLiveQuery` and `useRecipe` hooks. Improved user experience by making the search dynamic and responsive.  &#10;```" />
+    <MESSAGE value="fix(recipes): update dependency array in useLiveQuery&#10;&#10;Include current date in the dependency array of useLiveQuery to ensure it re-runs correctly. This fixes potential stale data issues in the RecipeList component." />
+    <MESSAGE value="refactor(preferences): update ProfilePicker styling and export&#10;&#10;Wrapped ProfilePicker in an additional styled View in preferences.tsx to adjust layout and spacing. Changed ProfilePicker to be exported for potential reuse elsewhere. Cleaned up redundant styling within the ProfilePicker component for better maintainability." />
+    <MESSAGE value="feat(auth): add email/password validation to login screen&#10;&#10;Implemented email and password state management with validation logic for the login screen. Enhanced user feedback with error messages for missing or invalid credentials. Updated navigation flow to redirect to the home screen upon successful login." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(auth): add email/password validation to login screen&#10;&#10;Implemented email and password state management with validation logic for the login screen. Enhanced user feedback with error messages for missing or invalid credentials. Updated navigation flow to redirect to the home screen upon successful login." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

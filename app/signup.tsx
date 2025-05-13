@@ -8,10 +8,28 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Text } from '@/components/ui/text';
+import { setItemValue } from '@/hooks/utils/use-preferences';
 
 export default function Signup() {
   const router = useRouter();
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = () => {
+    console.log('Username:', username);
+    console.log('Email:', email);
+    console.log('Password:', password);
+    setItemValue('email', email);
+    setItemValue('name', username);
+    setItemValue('password', password);
+    setItemValue('phone', '');
+    setItemValue('addr', '');
+    setItemValue('profile', '');
+    router.replace({ pathname: '/' });
+  };
+
   return (
     <>
       <SafeView className="flex-1 items-center justify-center gap-10">
@@ -28,13 +46,20 @@ export default function Signup() {
               <Label>
                 <Text size="lg">Username</Text>
               </Label>
-              <Input placeholderClassName="font-[rosarivo]" aria-labelledby="textareaLabel" />
+              <Input
+                value={username}
+                onChangeText={(e) => setUsername(e)}
+                placeholderClassName="font-[rosarivo]"
+                aria-labelledby="textareaLabel"
+              />
             </View>
             <View className="w-full">
               <Label>
                 <Text size="lg">Email</Text>
               </Label>
               <Input
+                value={email}
+                onChangeText={(e) => setEmail(e)}
                 placeholderClassName="font-[rosarivo]"
                 aria-labelledby="textareaLabel"
                 keyboardType="email-address"
@@ -45,6 +70,8 @@ export default function Signup() {
                 <Text size="lg">Password</Text>
               </Label>
               <Input
+                value={password}
+                onChangeText={(e) => setPassword(e)}
                 placeholderClassName="font-[rosarivo]"
                 aria-labelledby="textareaLabel"
                 textContentType="password"
@@ -59,12 +86,12 @@ export default function Signup() {
             </View>
           </View>
           <View className="items-center gap-4">
-            <Button onPress={() => router.replace({ pathname: 'index' })} className="w-full">
+            <Button onPress={() => handleSubmit()} className="w-full">
               <Text>Register</Text>
             </Button>
             <View className="items-center gap-2">
               <Text className="text-muted-foreground">Already have an account ?</Text>
-              <Text className="text-primary" onPress={() => router.replace({ pathname: 'index' })}>
+              <Text className="text-primary" onPress={() => router.replace({ pathname: '/' })}>
                 Login
               </Text>
             </View>

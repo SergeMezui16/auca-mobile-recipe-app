@@ -8,6 +8,7 @@ type Preferences = {
   phone: string | null;
   profile: string | null;
   addr: string | null;
+  password: string | null;
 };
 
 export function setItemValue(key: keyof Preferences, value: string) {

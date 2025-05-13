@@ -28,7 +28,9 @@ const Preferences = React.memo(() => {
         <HeaderToggleTheme />
       </View>
 
-      <ProfilePicker />
+      <View className="mb-10 border-b border-border pb-4">
+        <ProfilePicker />
+      </View>
 
       <KeyboardAvoidingView behavior="padding" className="gap-4" enabled>
         <View className="gap-1">
@@ -65,7 +67,7 @@ const Preferences = React.memo(() => {
   );
 });
 
-function ProfilePicker() {
+export function ProfilePicker() {
   const [value, setValue] = useState(getItemValue('profile'));
   const setImage = useDebounceCallback((v) => {
     setValue(v);
@@ -87,7 +89,7 @@ function ProfilePicker() {
   useEffect(() => {}, []);
 
   return (
-    <View className="mb-10 flex items-center justify-center gap-4 border-b border-border pb-4">
+    <View className="flex items-center justify-center gap-4">
       <View className="relative mt-4">
         <Image
           source={

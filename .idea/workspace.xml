@@ -18,17 +18,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(sensors): add shake detection with notification support&#10;&#10;Introduced a new screen for detecting device shakes using the accelerometer. It sends a notification when a shake is detected and adds a corresponding link in the sensors index for navigation.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="fix(map): adjust date handling in API request&#10;&#10;Updated the date logic to set a 2-hour offset before sending it in the API request. This ensures accurate time representation for the backend.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/pedometer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/pedometer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/shake.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/shake.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/utils/use-pedometer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/utils/use-pedometer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/gyroscope.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/gyroscope.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(drawer)/sensors/light.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(drawer)/sensors/light.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +74,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHELLCHECK.PATH": "/home/sergemezui/.local/share/JetBrains/PhpStorm2024.3/Shell Script/shellcheck",
     "ToolWindow.GitHub Copilot Chat.ShowToolbar": "false",
@@ -197,7 +192,8 @@
       <workItem from="1745673497104" duration="7679000" />
       <workItem from="1745681465800" duration="798000" />
       <workItem from="1746011225580" duration="645000" />
-      <workItem from="1746012140590" duration="5538000" />
+      <workItem from="1746012140590" duration="12126000" />
+      <workItem from="1747129329514" duration="754000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -423,7 +419,71 @@
       <option name="project" value="LOCAL" />
       <updated>1745679781913</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat(components): add ListBlock component&#10;&#10;Introduce a reusable ListBlock component for displaying a title and an optional">
+      <option name="closed" value="true" />
+      <created>1746017805642</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1746017805642</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat(components:icons): add GaugeIcon component&#10;&#10;Introduced GaugeIcon component using lucide-react-native. Utilized iconWithClassName utility for consistent styling and export.">
+      <option name="closed" value="true" />
+      <created>1746017814450</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1746017814450</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat(app:sensors): add gyroscope sensor screen&#10;&#10;Introduced a new screen to display gyroscope sensor data. It retrieves real-time x, y, and z-axis values and visualizes them with animated rotation. Includes a back navigation button for user convenience.">
+      <option name="closed" value="true" />
+      <created>1746017827161</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1746017827161</updated>
+    </task>
+    <task id="LOCAL-00032" summary="feat(app:sensors): add light sensor screen&#10;&#10;Introduce a new screen to display light sensor data using Expo Sensors. Includes functionality to subscribe and unsubscribe to sensor updates and displays availability and illuminance details. The feature is primarily supported on Android devices.">
+      <option name="closed" value="true" />
+      <created>1746017832155</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1746017832155</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat(app:sensors): enhance sensors UI and functionality&#10;&#10;Added support for &quot;expo-brightness&quot; plugin and updated sensor navigation icons. Improved Sensors layout with hidden stack headers and updated UI to use buttons with SafeView for better design consistency. Introduced new links for additional sensor features.">
+      <option name="closed" value="true" />
+      <created>1746017848536</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1746017848536</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat(app:sensors): enhance pedometer and add shake detection&#10;&#10;Updated the Pedometer screen with a revamped layout and `ListBlock` components for improved readability. Adjusted speed calculation logic in the `usePedometer` hook for accuracy. Introduced a new &quot;Shake Detection&quot; screen with notifications support and navigation enhancements.">
+      <option name="closed" value="true" />
+      <created>1746017866125</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1746017866125</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix(hooks:use-pedometer): correct speed calculation logic&#10;&#10;Updated the speed calculation to fix improper logic by replacing a redundant factor with a randomized value. This ensures a more realistic and varied speed computation.">
+      <option name="closed" value="true" />
+      <created>1746020834324</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1746020834324</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix(map): adjust date handling in API request&#10;&#10;Updated the date logic to set a 2-hour offset before sending it in the API request. This ensures accurate time representation for the backend.">
+      <option name="closed" value="true" />
+      <created>1746020848204</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1746020848204</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,15 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(app:tabs): implement new tab navigation and UI updates&#10;&#10;Introduced a new tab-based navigation system with refactored layout, screens, and components. Updated theme colors, icons, and added a recipe list with a dynamic UI. Integrated new dependencies, including `expo-image` and `flash-list`, for enhanced UI performance." />
-    <MESSAGE value="feat(app:tabs): add recipe components and update tabs&#10;&#10;Implemented `RecipeCard` and `RecipeList` components for recipe management. Refactored `index.tsx` and `search.tsx` to integrate these components with improved UI. Added a reusable `Input` component for the search functionality." />
-    <MESSAGE value="feat(app:ui): implement recipes and global tab components&#10;&#10;Added new recipe navigation, custom components including Alert, Dialog, Tabs, Avatar, and Textarea. Organized app structure with revamped layouts, portals, and gesture handlers for better user experience. Introduced dependencies like `@rn-primitives` and `@shopify/flash-list` to enhance functionality." />
-    <MESSAGE value="feat(app:auth): add login and signup screens with UI components&#10;&#10;Introduced new login and signup screens featuring reusable UI components like Checkbox, Input, and Button. Enhanced navigation structure and updated tab names for better readability. Added dependencies for checkbox functionality and adjusted default exports for consistency." />
-    <MESSAGE value="feat(app:recipes): enhance UI and add image picker functionality&#10;&#10;Added font styling to Textarea and introduced an image picker for recipe creation using `expo-image-picker`. Updated `New` screen to include new input fields, image selection, and navigation logic. Updated dependencies in `package.json` to support the new features." />
-    <MESSAGE value="feat(app:build): integrate EAS configuration and dev client setup&#10;&#10;Added `eas.json` for managing EAS builds with development, preview, and production profiles. Updated `package.json` to include `expo-dev-client` dependency and adjusted scripts for local development. This enhances build workflows and improves development flexibility." />
-    <MESSAGE value="feat(app:tabs): refactor tab layout and integrate notification handling" />
-    <MESSAGE value="feat(app:drawer): refactor navigation to drawer-based layout&#10;&#10;Migrated app structure from tabs to a drawer-based navigation layout for better organization. Added custom hooks for" />
-    <MESSAGE value="feat(app:drawer): add new screens to drawer navigation" />
     <MESSAGE value="feat(app:drawer): add swipe-to-delete functionality&#10;&#10;Implement two new swipeable screens with delete functionality using `SlideToLeft`. Added animation handling with React Native Reanimated. Updated drawer layout and navigation structure to include the new screens." />
     <MESSAGE value="feat(app:drawer): enhance UI and profile management&#10;&#10;Updated contact item styles with rounded background and padding. Improved profile management with synchronized state handling and debouncing. These changes refine the UI/UX and enhance user interaction consistency." />
     <MESSAGE value="feat(app:drawer): integrate swipeable item for list actions&#10;&#10;Replaced custom swipe-to-delete implementation with `react-native-swipeable-item`. Improved list rendering efficiency and modularized UI with better swipeable item handling. Updated dependencies to" />
@@ -466,7 +517,16 @@
     <MESSAGE value="feat(app:permissions): add location, motion, and audio support&#10;&#10;Integrated permissions for location, motion, and microphone access, and added support for Google Maps via API key. Updated the home screen with API call functionality to fetch data. Exported the map icon component for use in the UI." />
     <MESSAGE value="feat(app:sensors): introduce pedometer screen and utilities&#10;&#10;Added a new Sensors screen with a Pedometer feature for step tracking, distance, and speed calculations. Implemented a custom `usePedometer` hook for managing pedometer data and permissions. Updated drawer navigation to include the new Sensors section." />
     <MESSAGE value="feat(sensors): add shake detection with notification support&#10;&#10;Introduced a new screen for detecting device shakes using the accelerometer. It sends a notification when a shake is detected and adds a corresponding link in the sensors index for navigation." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(sensors): add shake detection with notification support&#10;&#10;Introduced a new screen for detecting device shakes using the accelerometer. It sends a notification when a shake is detected and adds a corresponding link in the sensors index for navigation." />
+    <MESSAGE value="feat(components): add ListBlock component&#10;&#10;Introduce a reusable ListBlock component for displaying" />
+    <MESSAGE value="feat(components): add ListBlock component&#10;&#10;Introduce a reusable ListBlock component for displaying value in a styled row. This enhances the UI consistency and modularity across the app." />
+    <MESSAGE value="feat(components:icons): add GaugeIcon component&#10;&#10;Introduced GaugeIcon component using lucide-react-native. Utilized iconWithClassName utility for consistent styling and export." />
+    <MESSAGE value="feat(app:sensors): add gyroscope sensor screen&#10;&#10;Introduced a new screen to display gyroscope sensor data. It retrieves real-time x, y, and z-axis values and visualizes them with animated rotation. Includes a back navigation button for user convenience." />
+    <MESSAGE value="feat(app:sensors): add light sensor screen&#10;&#10;Introduce a new screen to display light sensor data using Expo Sensors. Includes functionality to subscribe and unsubscribe to sensor updates and displays availability and illuminance details. The feature is primarily supported on Android devices." />
+    <MESSAGE value="feat(app:sensors): enhance sensors UI and functionality&#10;&#10;Added support for &quot;expo-brightness&quot; plugin and updated sensor navigation icons. Improved Sensors layout with hidden stack headers and updated UI to use buttons with SafeView for better design consistency. Introduced new links for additional sensor features." />
+    <MESSAGE value="feat(app:sensors): enhance pedometer and add shake detection&#10;&#10;Updated the Pedometer screen with a revamped layout and `ListBlock` components for improved readability. Adjusted speed calculation logic in the `usePedometer` hook for accuracy. Introduced a new &quot;Shake Detection&quot; screen with notifications support and navigation enhancements." />
+    <MESSAGE value="fix(hooks:use-pedometer): correct speed calculation logic&#10;&#10;Updated the speed calculation to fix improper logic by replacing a redundant factor with a randomized value. This ensures a more realistic and varied speed computation." />
+    <MESSAGE value="fix(map): adjust date handling in API request&#10;&#10;Updated the date logic to set a 2-hour offset before sending it in the API request. This ensures accurate time representation for the backend." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(map): adjust date handling in API request&#10;&#10;Updated the date logic to set a 2-hour offset before sending it in the API request. This ensures accurate time representation for the backend." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -29,6 +29,7 @@ Notifications.setNotificationHandler({
 });
 
 function useNotificationObserver() {
+  Notifications.requestPermissionsAsync();
   useEffect(() => {
     let isMounted = true;
 

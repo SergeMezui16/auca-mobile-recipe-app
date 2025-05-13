@@ -42,7 +42,7 @@ export default function GyroscopeScreen() {
       <ListBlock title="Z-axis" value={gyroscopeData.z.toFixed(2)} />
       <View style={styles.container}>
         <Animated.View
-          className="flex items-center justify-center rounded-lg border border-border bg-yellow-400 p-4 shadow-lg"
+          className="flex items-center justify-center rounded-lg border border-border  p-4 shadow-lg"
           style={[
             styles.rectangle,
             {
@@ -53,7 +53,7 @@ export default function GyroscopeScreen() {
               ],
             },
           ]}>
-          <Text>TEXT</Text>
+          <Text className="text-white">GYRO</Text>
         </Animated.View>
       </View>
       <Link asChild href={{ pathname: '(drawer)/sensors' }}>
@@ -71,7 +71,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
   },
   rectangle: {
-    width: 150,
-    height: 100,
+    width: 300,
+    height: 200,
+    backgroundColor: 'blue',
   },
 });

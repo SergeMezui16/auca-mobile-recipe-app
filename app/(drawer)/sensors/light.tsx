@@ -1,17 +1,16 @@
 import { Link } from 'expo-router';
 import { LightSensor } from 'expo-sensors';
 import { useEffect, useState } from 'react';
-import { Button, Platform, View } from 'react-native';
+import { Animated, Button, Platform, StyleSheet, View } from 'react-native';
 
 import { SafeView } from '@/components/blocks';
 import { ListBlock } from '@/components/blocks/list-block';
 import { Text } from '@/components/ui/text';
 
-export default function LishtScreen() {
+export default function LightScreen() {
   const [{ illuminance }, setData] = useState({ illuminance: 0 });
   const [subscription, setSubscription] = useState(null);
   const [isAvailable, setIsAvailable] = useState(false);
-
   const subscribe = () => {
     LightSensor.requestPermissionsAsync();
 
@@ -20,20 +19,12 @@ export default function LishtScreen() {
       if (available) {
         setSubscription(
           LightSensor.addListener((sensorData) => {
-            console.log(sensorData, 'dazdazdaz');
             setData(sensorData);
           })
         );
         LightSensor.setUpdateInterval(100);
       }
     });
-
-    setSubscription(
-      LightSensor.addListener((sensorData) => {
-        console.log(sensorData, 'dazdazdaz');
-        setData(sensorData);
-      })
-    );
   };
 
   const unsubscribe = () => {
@@ -59,9 +50,37 @@ export default function LishtScreen() {
         title="Illuminance"
         value={Platform.OS === 'android' ? `${illuminance} lx` : `Only available on Android`}
       />
+      <Animated.View style={styles.circleContainer}>
+        <Animated.View
+          style={[
+            styles.circle,
+            {
+              transform: [
+                {
+                  scale: illuminance / 100,
+                },
+              ],
+            },
+          ]}
+        />
+      </Animated.View>
       <Link asChild href={{ pathname: '(drawer)/sensors' }}>
         <Button title="Back" />
       </Link>
     </SafeView>
   );
 }
+
+const styles = StyleSheet.create({
+  circleContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  circle: {
+    backgroundColor: 'blue',
+    width: 100,
+    height: 100,
+    borderRadius: '100%',
+  },
+});

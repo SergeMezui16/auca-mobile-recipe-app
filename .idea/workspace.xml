@@ -18,9 +18,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(auth): add email/password validation to login screen&#10;&#10;Implemented email and password state management with validation logic for the login screen. Enhanced user feedback with error messages for missing or invalid credentials. Updated navigation flow to redirect to the home screen upon successful login.">
+    <list default="true" id="9b5e4db7-9343-4b9e-b864-229a4ef3f4c7" name="Changes" comment="feat(auth): final commit - add email/password validation to login screen&#10;&#10;Implemented state management and validation logic for email and password fields in the login screen. Enhanced user experience with error messages for invalid credentials and streamlined navigation upon successful login. Updated project files with associated changes, including adding package manager metadata to package.json.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,36 +69,36 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHELLCHECK.PATH": "/home/sergemezui/.local/share/JetBrains/PhpStorm2024.3/Shell Script/shellcheck",
-    "ToolWindow.GitHub Copilot Chat.ShowToolbar": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/components/icons",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.android.executor": "Run",
-    "npm.start.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/prettier",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
-    "ts.external.directory.path": "/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;/home/sergemezui/.local/share/JetBrains/PhpStorm2024.3/Shell Script/shellcheck&quot;,
+    &quot;ToolWindow.GitHub Copilot Chat.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/components/icons&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.android.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/sergemezui/www/auca/mobile/recipe-mobile-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TypeScript JSX"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TypeScript JSX&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/components/icons" />
@@ -146,8 +146,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.466" />
-        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.466" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PS-251.25410.148" />
+        <option value="bundled-php-predefined-a98d8de5180a-c5828cf854d9-com.jetbrains.php.sharedIndexes-PS-251.25410.148" />
       </set>
     </attachedChunks>
   </component>
@@ -191,7 +191,8 @@
       <workItem from="1745681465800" duration="798000" />
       <workItem from="1746011225580" duration="645000" />
       <workItem from="1746012140590" duration="12126000" />
-      <workItem from="1747129329514" duration="12197000" />
+      <workItem from="1747129329514" duration="12264000" />
+      <workItem from="1747334969434" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="chore(idea): add IDE configuration files for project setup&#10;&#10;Include JetBrains IDE-specific configuration files for project settings, code styles, inspections, version control, and workspace preferences. These files ensure consistent development environments and streamline workflows across team members. Also, update `.gitignore` to exclude unnecessary and temporary files.">
       <option name="closed" value="true" />
@@ -553,7 +554,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747150588843</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="feat(auth): final commit - add email/password validation to login screen&#10;&#10;Implemented state management and validation logic for email and password fields in the login screen. Enhanced user experience with error messages for invalid credentials and streamlined navigation upon successful login. Updated project files with associated changes, including adding package manager metadata to package.json.">
+      <option name="closed" value="true" />
+      <created>1747165907392</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1747165907392</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(recipes): enhance recipe editing and data handling&#10;&#10;Added swipe-to-delete functionality for recipe ingredients and steps with animations using Reanimated. Improved LiveQuery dependencies for reactivity and ensured consistency in type inference for database schema. Refactored components for better modularity and UI updates." />
     <MESSAGE value="feat(map): add geofencing with map and location tracking&#10;&#10;Introduce a map view with geofencing capabilities using Google Maps. Implement region-based alerts and notifications for entering/exiting predefined areas. Added a custom hook for handling user location and permissions." />
     <MESSAGE value="feat(drawer): add Map screen and update drawer navigation&#10;&#10;Introduced a new &quot;Map&quot; screen with its corresponding icon and drawer label. Updated the drawer navigation to include configuration for the Map screen. Adjusted .gitignore to include .env.* files and fixed newline handling." />
     <MESSAGE value="feat(project:dependencies): add new packages for geofencing and mapping&#10;&#10;Added `@rn-bridge/react-native-geofencing`, `react-native-maps`, and several `expo` utilities for new features. These enhancements support geofencing, mapping, and sensor functionalities, boosting the app's capability for location-based and interactive features." />
@@ -596,7 +604,8 @@
     <MESSAGE value="fix(recipes): update dependency array in useLiveQuery&#10;&#10;Include current date in the dependency array of useLiveQuery to ensure it re-runs correctly. This fixes potential stale data issues in the RecipeList component." />
     <MESSAGE value="refactor(preferences): update ProfilePicker styling and export&#10;&#10;Wrapped ProfilePicker in an additional styled View in preferences.tsx to adjust layout and spacing. Changed ProfilePicker to be exported for potential reuse elsewhere. Cleaned up redundant styling within the ProfilePicker component for better maintainability." />
     <MESSAGE value="feat(auth): add email/password validation to login screen&#10;&#10;Implemented email and password state management with validation logic for the login screen. Enhanced user feedback with error messages for missing or invalid credentials. Updated navigation flow to redirect to the home screen upon successful login." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(auth): add email/password validation to login screen&#10;&#10;Implemented email and password state management with validation logic for the login screen. Enhanced user feedback with error messages for missing or invalid credentials. Updated navigation flow to redirect to the home screen upon successful login." />
+    <MESSAGE value="feat(auth): final commit - add email/password validation to login screen&#10;&#10;Implemented state management and validation logic for email and password fields in the login screen. Enhanced user experience with error messages for invalid credentials and streamlined navigation upon successful login. Updated project files with associated changes, including adding package manager metadata to package.json." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(auth): final commit - add email/password validation to login screen&#10;&#10;Implemented state management and validation logic for email and password fields in the login screen. Enhanced user experience with error messages for invalid credentials and streamlined navigation upon successful login. Updated project files with associated changes, including adding package manager metadata to package.json." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
